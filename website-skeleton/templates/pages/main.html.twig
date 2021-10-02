@@ -1,4 +1,22 @@
 {% extends "base.html.twig" %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('scss/header') }}
+{% endblock %}
+
 {% block body %}
-    test
+    <div class="header">
+        <div class="content">
+            <div class="name">Oscar PALISSOT</div>
+            <nav class="navigation">
+                <ul class="menuItems">
+                    <li><a href="" class="link">Qui suis-je ?</a></li>
+                    <li><a href="" class="link">Compétences</a></li>
+                    <li><a href="" class="link">Expériences</a></li>
+                    <li><a href="" class="link">Formations</a></li>
+                    <li><a href="" class="link">Diplômes</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
 {% endblock %}
