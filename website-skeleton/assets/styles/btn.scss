@@ -1,0 +1,14 @@
+$blue: #5c88da;
+$blueHover: #2d61c2;
+
+.btn{
+    display: inline-block;
+    padding: 1rem;
+    background-color: $blue;
+    border-radius: 0.5rem;
+    margin: 1em;
+    font-size: 30px;
+    font-weight: 500;
+    color: white;
+    text-justify: none;
+}

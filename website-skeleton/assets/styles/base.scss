@@ -5,6 +5,8 @@
     -webkit-overflow-scrolling: touch;
     font-family: 'Poppins', sans-serif;
     color: rgb(14, 14, 14);
+    text-align: justify;
+    text-justify: inter-word;
   }
   
   html, body{
@@ -17,4 +19,9 @@
 
   a{
       text-decoration: none;
+  }
+
+  main{
+    margin: 0 10%;
+    margin-top: 6em;
   }

@@ -2,6 +2,8 @@
 
 {% block stylesheets %}
     {{ encore_entry_link_tags('scss/header') }}
+    {{ encore_entry_link_tags('scss/about') }}
+    {{ encore_entry_link_tags('scss/btn') }}
 {% endblock %}
 
 {% block body %}
@@ -19,4 +21,17 @@
             </nav>
         </div>
     </div>
+    <main>
+        <div class="about">
+            <div class="aboutLeft">
+                <h2 class="title">Qui suis-je ?</h2>
+                <p class="aboutText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <a class="btn" href="">Télécharger mon CV<i class="far fa-address-card"></i></a>
+                <a class="btn" href="">Me contacter<i class="far fa-paper-plane"></i></a>
+            </div>
+            <div class="aboutRight">
+                <img src={{ asset ('img/cv.png')}} alt="" class="aboutImg">
+            </div>
+        </div>
+    </main>
 {% endblock %}
