@@ -7,8 +7,20 @@ $blueHover: #2d61c2;
     background-color: $blue;
     border-radius: 0.5rem;
     margin: 1em;
+    margin-left: 0;
     font-size: 30px;
     font-weight: 500;
     color: white;
     text-justify: none;
+    transition: background-color ease-out 0.15s;
+    i{
+        margin-left: 1rem;
+        color: white;
+    }
+}
+
+.btn:hover{
+    background-color: $blueHover;
+    box-shadow: inset 2px 4px 3px rgba(0, 0, 0, 0.1);
+    transition: background-color ease-out 0.15s;
 }

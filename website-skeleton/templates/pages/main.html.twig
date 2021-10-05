@@ -9,7 +9,7 @@
 {% block body %}
     <div class="header">
         <div class="content">
-            <div class="name">Oscar PALISSOT</div>
+            <div class="name"><h1>Oscar PALISSOT</h1></div>
             <nav class="navigation">
                 <ul class="menuItems">
                     <li><a href="" class="link">Qui suis-je ?</a></li>
@@ -24,14 +24,17 @@
     <main>
         <div class="about">
             <div class="aboutLeft">
-                <h2 class="title">Qui suis-je ?</h2>
-                <p class="aboutText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <h1 class="title">Qui suis-je ?</h1>
+                <h2 class="subTitle">Etudiant ingénieur</h2>
+                <p class="aboutText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                 <a class="btn" href="">Télécharger mon CV<i class="far fa-address-card"></i></a>
-                <a class="btn" href="">Me contacter<i class="far fa-paper-plane"></i></a>
+                
             </div>
             <div class="aboutRight">
                 <img src={{ asset ('img/cv.png')}} alt="" class="aboutImg">
             </div>
         </div>
+        <br><br><br><br>
+        {# <a class="btn" href="">Me contacter<i class="far fa-paper-plane"></i></a> #}
     </main>
 {% endblock %}

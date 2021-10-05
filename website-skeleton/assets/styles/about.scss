@@ -3,24 +3,36 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .aboutLeft{
+    
+    .aboutLeft, .aboutRight{
         width: 50%;
+        height: 50vh;
+    }
+    .aboutLeft{
         padding-right: 5%;
         .title{
-            font-size: 3em;
-            font-weight: 600;
-            margin-bottom: 0.75em;
+            margin-bottom: 0.4rem;
+        }
+        .subTitle{
+            margin-bottom: 0.4rem;
         }
         .aboutText{
             font-size: 20px;
         }
+        position: relative;
+        .btn{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            margin: 0;
+        }
     }
     .aboutRight{
-        width: 50%;
         padding-left: 5%;
         .aboutImg{
-            width:100%;
+            max-width:100%;
             max-height:100%;
         }
     }
+    
 }
