@@ -24,6 +24,9 @@ Encore
     .addStyleEntry('scss/header', './assets/styles/header.scss')
     .addStyleEntry('scss/about', './assets/styles/about.scss')
     .addStyleEntry('scss/btn', './assets/styles/btn.scss')
+    .addStyleEntry('scss/skills', './assets/styles/skills.scss')
+    .addStyleEntry('scss/dropdown', './assets/styles/dropdown.scss')
+    .addStyleEntry('scss/dropdownTheme1', './assets/styles/dropdownTheme1.scss')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')

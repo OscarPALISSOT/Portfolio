@@ -4,6 +4,9 @@
     {{ encore_entry_link_tags('scss/header') }}
     {{ encore_entry_link_tags('scss/about') }}
     {{ encore_entry_link_tags('scss/btn') }}
+    {{ encore_entry_link_tags('scss/skills') }}
+    {{ encore_entry_link_tags('scss/dropdown') }}
+    {{ encore_entry_link_tags('scss/dropdownTheme1') }}
 {% endblock %}
 
 {% block body %}
@@ -34,7 +37,13 @@
                 <img src={{ asset ('img/cv.png')}} alt="" class="aboutImg">
             </div>
         </div>
-        <br><br><br><br>
+        <div class="skills">
+            <h1 class="title">Compétences</h1>
+            <div class="dropdown">
+                <i class="fas fa-angle-down fa-2x"></i>
+                <input class="toogle" type="checkbox"></input>
+            </div>
+        </div>
         {# <a class="btn" href="">Me contacter<i class="far fa-paper-plane"></i></a> #}
     </main>
 {% endblock %}
