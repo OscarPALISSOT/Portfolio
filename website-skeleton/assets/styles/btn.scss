@@ -24,3 +24,28 @@ $blueHover: #2d61c2;
     box-shadow: inset 2px 4px 3px rgba(0, 0, 0, 0.1);
     transition: background-color ease-out 0.15s;
 }
+
+
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    .btn{
+        font-size: 22px;
+    }
+}
+
+// Double Extra large devices (x-large desktops, 1200px and up)
+@media (min-width: 1700px) {
+    .btn{
+        font-size: 28px;
+    }
+}
