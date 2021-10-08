@@ -28,6 +28,8 @@ Encore
     .addStyleEntry('scss/dropdown', './assets/styles/dropdown.scss')
     .addStyleEntry('scss/dropdownTheme1', './assets/styles/dropdownTheme1.scss')
 
+    .addStyleEntry('scss/dropdown', './assets/js/dropdown.js')
+
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
 

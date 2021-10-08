@@ -10,9 +10,10 @@ $blue: #5c88da;
     }
     .toogle{
         position: relative;
-        height: 32px;
-        left: 90%;
-        top: calc(50% - 16px);
+        height: 100%;
+        width: 100%;
+        top: -50%;
+        opacity: 0;
     }
 }
 // Small devices (landscape phones, 576px and up)
