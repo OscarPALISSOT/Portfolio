@@ -9,7 +9,9 @@
     {{ encore_entry_link_tags('scss/dropdownTheme1') }}
 {% endblock %}
 
-{% block javascripts %}{% endblock %}
+{% block javascripts %}
+    {{ encore_entry_script_tags('js/dropdownJS') }}
+{% endblock %}
 
 {% block body %}
     <div class="header">
@@ -43,8 +45,8 @@
             <h1 class="title">Compétences</h1>
             <div class="dropdown">
                 <i class="fas fa-angle-down fa-2x"></i>
-                <input class="toogle" type="checkbox"></input>
             </div>
+            <div class="panel"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p></div>
         </div>
         {# <a class="btn" href="">Me contacter<i class="far fa-paper-plane"></i></a> #}
     </main>
