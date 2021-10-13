@@ -3,17 +3,16 @@ $blue: #5c88da;
 
 .dropdown{
     margin: 1em;
+    cursor: pointer;
     i{
         position: relative;
         left: 90%;
         top: calc(50% - 16px);
     }
-    .toogle{
-        position: relative;
-        height: 100%;
-        width: 100%;
-        top: -50%;
-        opacity: 0;
+    .panel{
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height ease-out 0.3s;
     }
 }
 // Small devices (landscape phones, 576px and up)
