@@ -1,41 +1,53 @@
 *, ::before, ::after{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    -webkit-overflow-scrolling: touch;
-    text-align: justify;
-    text-justify: inter-word;
-  }
-  
-  html, body{
-    margin: 0;
-    height: 100%;
-    width: 100%;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
 
-  a{
-      text-decoration: none;
-  }
+html, body{
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
 
-  main{
-    margin: 0 10%;
-    margin-top: 6em;
-  }
+p, h1, h2, h3, h4, a{
+  font-family: 'Poppins', sans-serif;
+  color: rgb(14, 14, 14);
+}
 
-  p, h1, h2, h3, h4, a{
-    font-family: 'Poppins', sans-serif;
-    color: rgb(14, 14, 14);
-  }
+main{
+  margin: 0 10%;
+  margin-top: 6em;
+}
 
-  h1{
-    font-size: 3em;
-    font-weight: bold;
-  }
+h1{
+  font-size: 3em;
+  font-weight: bold;
+}
 
 
-  h2{
-    font-size: 1.75em;
-    font-weight: bold;
-  }
+h2{
+  font-size: 1.75em;
+  font-weight: bold;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}
+
+// Double Extra large devices (x-large desktops, 1200px and up)
+@media (min-width: 1700px) {
+}
+

@@ -1,61 +1,113 @@
-$blue: #5c88da;
+a{
+    text-decoration: none;
+}
 
 .header{
     width: 100vw;
-    height: 100px;
-    box-shadow: 0 6px 12px 0 rgb(0 0 0 / 12%);
-}
-
-.content{
-    margin: 0 10%;
-    height: 100%;
-}
-
-.name, .navigation{
-    top: 0;
-    position: -webkit-sticky;
-    position: sticky;
-}
-
-.name{
-    float: left;
-    h1{
-        line-height: 100px;
-        font-size: 30px;
-        cursor: pointer;
-    }
 }
 
 .navigation{
-    float: right;
-    height: 100%;
-    li{
-        list-style: none;
-        float: left;
-        margin: 0 10px;
-        .link{
-            line-height: 100px;
-            font-size: 20px;
-            font-weight: 500;
-            position: relative;
+    transform: translateX(100vw);
+}
+
+// XSmall devices (Portrait phones, 320px and up)
+@media (min-width: 320px) {
+    .name{
+        margin: 5em;
+        h1{;
+            font-size: 5em;
         }
-        .link::before{
-            content: "";
-            height: 4px;
-            bottom: -4px;
-            border-radius: 4px;
-            position: absolute;
-            background-color: $blue;
-            width: 100%;
-            left: 0;
-            transition: transform 0.35s ease-out;
-            transform-origin: bottom middle;
-            transform: scaleX(0);
+    }
+
+
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    .name{
+        margin: 2em 5em;
+        h1{;
+            font-size: 3em;
         }
-        .link:hover:before { 
-            transform: scaleX(1);
-            transform-origin: bottom middle; 
-          }
     }
 }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    .header{
+        height: 100px;
+        box-shadow: 0 6px 12px 0 rgb(0 0 0 / 12%);
+    }
+
+    .content{
+        margin: 0 10%;
+        height: 100%;
+
+        .name, .navigation{
+            top: 0;
+            position: -webkit-sticky;
+            position: sticky;
+        }
+
+        .name{
+            float: left;
+            margin: 0;
+            h1{
+                line-height: 100px;
+                font-size: 30px;
+                cursor: pointer;
+            }
+        }
+    }
+
+
+
+    .navigation{
+        float: right;
+        height: 100%;
+        transform: translateX(0);
+        li{
+            list-style: none;
+            float: left;
+            margin: 0 10px;
+            .link{
+                line-height: 100px;
+                font-size: 20px;
+                font-weight: 500;
+                position: relative;
+            }
+            .link::before{
+                content: "";
+                height: 4px;
+                bottom: -4px;
+                border-radius: 4px;
+                position: absolute;
+                background-color: #5c88da;
+                width: 100%;
+                left: 0;
+                transition: transform 0.35s ease-out;
+                transform-origin: bottom right;
+                transform: scaleX(0);
+            }
+            .link:hover:before {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+            }
+        }
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}
+
+// Double Extra large devices (x-large desktops, 1200px and up)
+@media (min-width: 1700px) {
+}
+
 
