@@ -1,0 +1,38 @@
+.menu-btn{
+  position: fixed;
+  top: 0;
+  right: 15%;
+  border: solid red 5px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 80px;
+  width: 80px;
+  transform: translateX(-100vw);
+}
+
+// XSmall devices (Portrait phones, 320px and up)
+@media (min-width: 320px) {}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .menu-btn{
+    display: none;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}
+
+// Double Extra large devices (x-large desktops, 1200px and up)
+@media (min-width: 1700px) {
+}
