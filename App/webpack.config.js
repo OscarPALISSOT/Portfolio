@@ -24,6 +24,8 @@ Encore
     .addStyleEntry('scss/header', './assets/styles/header.scss')
     .addStyleEntry('scss/menuBtn', './assets/styles/menuBtn.scss')
 
+    .addEntry('js/menuBtn', './assets/js/menuBtn.js')
+
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
 

@@ -14,30 +14,33 @@
         {{ encore_entry_link_tags('scss/header') }}
         {{ encore_entry_link_tags('scss/menuBtn') }}
         {% block stylesheets %}{% endblock %}
+
+        {{ encore_entry_script_tags('js/menuBtn') }}
     </head>
     <body>
-    <div class="header">
-        <nav class="navigation">
-            <div class="name">
-                <a href="/"><h1>Oscar PALISSOT</h1></a>
-            </div>
-            <label id="nav-btn" for="NavToggle">
-                <div class="menu-btn">
-                    <div class="menu-btn-burger"></div>
+        <div class="header">
+            <nav class="navigation">
+                <div class="name">
+                    <a href="/"><h1>Oscar PALISSOT</h1></a>
                 </div>
-            </label>
-            <ul class="menuItems">
-                <li><a href="" class="link">Qui suis-je ?</a></li>
-                <li><a href="" class="link">Compétences</a></li>
-                <li><a href="" class="link">Expériences</a></li>
-            </ul>
-        </nav>
-    </div>
+                <input id="NavToggle" type="checkbox">
+                <label id="nav-btn" for="NavToggle">
+                    <div class="menu-btn">
+                        <div class="menu-btn-burger"></div>
+                    </div>
+                </label>
+                <ul class="menuItems">
+                    <li><a href="" class="link">Qui suis-je ?</a></li>
+                    <li><a href="" class="link">Compétences</a></li>
+                    <li><a href="" class="link">Expériences</a></li>
+                    <li><a href="" class="link">Me contacter</a></li>
+                </ul>
+            </nav>
+        </div>
 
-    {% block body %}
+        {% block body %}
 
-    {% endblock %}
-
+        {% endblock %}
     </body>
 
     
