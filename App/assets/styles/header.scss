@@ -17,6 +17,27 @@ a{
 
 .navigation{
     transform: translateX(100vw);
+    .menuItems{
+        position: relative;
+        height: 0;
+        transition: all 0.35s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 2em;
+        li{
+            list-style: none;
+            font-size: 1.75em;
+            font-weight: bold;
+            margin-top: 1em;
+            border-bottom: 3px solid #5c88da ;
+        }
+    }
+
+}
+
+.no-scroll{
+    overflow: hidden;
 }
 
 
@@ -78,7 +99,6 @@ a{
 
     .navigation{
         li{
-            list-style: none;
             float: left;
             margin: 0 10px;
             .link{
