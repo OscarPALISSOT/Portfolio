@@ -1,38 +1,22 @@
 .aboutMe{
-    padding: 0 10%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 25vh;
-    .aboutLeft, .aboutRight{
-        width: 50%;
-        height: 50vh;
+    height: 75vh;
+    text-align: center;
+    .title{
+        font-size: 2.25em;
+        margin-bottom: 0.4rem;
     }
-    .aboutLeft{
-        padding-right: 5%;
-        .title{
-            margin-bottom: 0.4rem;
-        }
-        .subTitle{
-            margin-bottom: 0.4rem;
-        }
-        .aboutText{
-            font-size: 20px;
-        }
-        position: relative;
-        .btn{
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            margin: 0;
-        }
+    .subTitle{
+        font-size: 1.5em;
+        margin-bottom: 0.4rem;
     }
-    .aboutRight{
-        padding-left: 5%;
-        .aboutImg{
-            max-width:100%;
-            max-height:100%;
-        }
+    .aboutText{
+        text-align: justify;
+        text-justify: inter-word;
+        font-size: 1.15em;
+    }
+    .aboutImg{
+        max-width:100%;
+        max-height:100%;
     }
     
 }
@@ -45,26 +29,17 @@
 @media (min-width: 768px) {}
 
 // Large devices (desktops, 992px and up)
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+
+    .aboutMe{
+        height: 80vh;
+    }
+}
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
-    .aboutMe{
-        .aboutLeft{
-            .aboutText{
-                font-size: 15px;
-            }
-        }
-    }
 }
 
 // Double Extra large devices (x-large desktops, 1200px and up)
 @media (min-width: 1700px) {
-    .aboutMe{
-        .aboutLeft{
-            .aboutText{
-                font-size: 20px;
-            }
-        }
-    }
 }
