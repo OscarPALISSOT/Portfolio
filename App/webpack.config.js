@@ -23,6 +23,7 @@ Encore
     .addStyleEntry('scss/base', './assets/styles/base.scss')
     .addStyleEntry('scss/header', './assets/styles/header.scss')
     .addStyleEntry('scss/menuBtn', './assets/styles/menuBtn.scss')
+    .addStyleEntry('scss/BlueBtn', './assets/styles/BlueBtn.scss')
 
     .addEntry('js/menuBtn', './assets/js/menuBtn.js')
 

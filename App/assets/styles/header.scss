@@ -1,9 +1,13 @@
+$blue: #5c88da;
+$blueHover: #2d61c2;
+
 a{
     text-decoration: none;
 }
 
 .header{
     width: 100vw;
+    margin-bottom: 1em;
 }
 
 .name{
@@ -30,7 +34,7 @@ a{
             font-size: 1.75em;
             font-weight: bold;
             margin-top: 1em;
-            border-bottom: 3px solid #5c88da ;
+            border-bottom: 3px solid $blue ;
         }
     }
 }
@@ -103,6 +107,7 @@ a{
     }
 
     .name{
+        transition: all 0.25s ease-in-out;
         transform: translateX(0);
         margin: 0;
         h1{
@@ -110,6 +115,11 @@ a{
             font-size: 30px;
             cursor: pointer;
         }
+    }
+
+    .name:hover{
+        transform: scale(1.1);
+
     }
 
     .navigation{
@@ -142,7 +152,7 @@ a{
                     bottom: -4px;
                     border-radius: 4px;
                     position: absolute;
-                    background-color: #5c88da;
+                    background-color: $blue;
                     width: 100%;
                     left: 0;
                     transition: transform 0.35s ease-out;

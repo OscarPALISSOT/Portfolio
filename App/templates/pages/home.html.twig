@@ -1,7 +1,7 @@
 {% extends "base.html.twig" %}
 
 {% block stylesheets %}
-
+    {{ encore_entry_link_tags('scss/BlueBtn') }}
 {% endblock %}
 
 {% block javascripts %}
@@ -10,19 +10,17 @@
 
 {% block body %}
     <main>
-        {#
-        <div class="about">
+        <section class="aboutMe">
             <div class="aboutLeft">
                 <h1 class="title">Qui suis-je ?</h1>
                 <h2 class="subTitle">Etudiant ingénieur</h2>
-                <p class="aboutText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                <p class="aboutText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                 <a class="btn" href="">Télécharger mon CV<i class="far fa-address-card"></i></a>
 
             </div>
             <div class="aboutRight">
-                <img src={{ asset ('img/cv.png')}} alt="" class="aboutImg">
+                <img src={{ asset ('img/PhotoProFaceSansFond.png')}} alt="" class="aboutImg">
             </div>
-        </div>
-        #}
+        </section>
     </main>
 {% endblock %}

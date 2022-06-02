@@ -1,3 +1,6 @@
+$blue: #5c88da;
+$blueHover: #2d61c2;
+
 #NavToggle{
   display: none;
   height: 80px;
@@ -26,7 +29,7 @@
 .menu-btn-burger{
   width: 50px;
   height: 6px;
-  background: #5c88da;
+  background: $blue;
   border-radius: 5px;
   transition: all .35s ease-in-out;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
@@ -35,7 +38,7 @@
 .menu-btn-burger::after, .menu-btn-burger::before{
   content: "";
   position: absolute;
-  background: #5c88da;
+  background: $blue;
   width: 50px;
   height: 6px;
   border-radius: 5px;

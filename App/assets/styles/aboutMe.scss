@@ -1,4 +1,4 @@
-.about{
+.aboutMe{
     padding: 0 10%;
     display: flex;
     justify-content: space-between;
@@ -49,7 +49,7 @@
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
-    .about{
+    .aboutMe{
         .aboutLeft{
             .aboutText{
                 font-size: 15px;
@@ -60,7 +60,7 @@
 
 // Double Extra large devices (x-large desktops, 1200px and up)
 @media (min-width: 1700px) {
-    .about{
+    .aboutMe{
         .aboutLeft{
             .aboutText{
                 font-size: 20px;
