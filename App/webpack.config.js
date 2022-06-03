@@ -25,6 +25,7 @@ Encore
     .addStyleEntry('scss/menuBtn', './assets/styles/menuBtn.scss')
     .addStyleEntry('scss/BlueBtn', './assets/styles/BlueBtn.scss')
     .addStyleEntry('scss/aboutMe', './assets/styles/aboutMe.scss')
+    .addStyleEntry('scss/section', './assets/styles/section.scss')
 
     .addEntry('js/menuBtn', './assets/js/menuBtn.js')
 
