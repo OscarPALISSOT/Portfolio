@@ -1,5 +1,4 @@
 .aboutMe{
-    height: 75vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,7 +38,6 @@
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
     .aboutMe{
-        height: 80vh;
         .aboutContent{
             display: flex;
             flex-direction: row-reverse;
@@ -47,8 +45,12 @@
             align-items: center;
             max-height: 400px;
             .aboutImg{
+                transition: transform 0.35s ease-in-out;
                 max-height:400px;
                 max-width: 300px;
+            }
+            .aboutImg:hover{
+                transform: scale(1.05);
             }
         }
 
