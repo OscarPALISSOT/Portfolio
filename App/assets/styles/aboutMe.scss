@@ -21,18 +21,43 @@
     
 }
 
-
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {}
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+    .aboutMe{
+        text-align: left;
+        .aboutImg{
+            float: right;
+            width: 33%;
+        }
+        .aboutText{
+            width: 66%;
+        }
+    }
+
+}
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-
     .aboutMe{
         height: 80vh;
+    }
+}
+
+// Extra large devices (large desktops, 1024px and up)
+@media (min-width: 1024px) {
+    .aboutMe{
+        text-align: left;
+        .aboutImg{
+            float: right;
+            width: 50%;
+            max-height: 100%;
+        }
+        .aboutText{
+            width: 50%;
+        }
     }
 }
 

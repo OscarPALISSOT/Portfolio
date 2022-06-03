@@ -104,6 +104,10 @@ a{
     .header{
         height: 100px;
         box-shadow: 0 6px 12px 0 rgb(0 0 0 / 12%);
+        position: sticky;
+        top: 0;
+        background-color: #e8e8e8;
+        z-index: 2;
     }
 
     .name{
