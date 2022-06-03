@@ -1,0 +1,17 @@
+.item{
+  height: 200px;
+  width: 300px;
+  margin: 10px;
+  background-color: red;
+  flex-shrink: 0;
+}
+
+.galerie{
+  border: solid green 3px;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1300px;
+  width: 100%;
+  justify-content: center;
+  max-height: 100%;
+}
