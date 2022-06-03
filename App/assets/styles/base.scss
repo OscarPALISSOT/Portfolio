@@ -37,10 +37,6 @@ h2{
   font-weight: bold;
 }
 
-section{
-  height: 75vh;
-}
-
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {}
 
@@ -49,10 +45,6 @@ section{
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-  section{
-    height: 80vh;
-    margin-bottom: 3em;
-  }
 }
 
 // Extra large devices (large desktops, 1200px and up)
