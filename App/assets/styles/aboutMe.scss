@@ -2,10 +2,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
     .aboutText{
         text-align: justify;
         text-justify: inter-word;
         font-size: 1.15em;
+    }
+    .aboutImg{
+        img{
+            max-width: 100%;
+        }
     }
     
 }
@@ -17,7 +23,10 @@
         .aboutImg{
             float: right;
             min-width:40%;
-            max-height:100%;
+            max-width: 300px;
+            img{
+                margin: 1em;
+            }
         }
     }
 }
@@ -36,14 +45,20 @@
             justify-content: space-between;
             align-items: center;
             max-height: 400px;
+            .aboutText{
+                margin-right: 3em;
+            }
             .aboutImg{
-                transition: transform 0.35s ease-in-out;
-                max-height:400px;
-                max-width: 300px;
+                width: 100%;
+                text-align: center;
+                img{
+                    transition: transform 0.35s ease-in-out;
+                }
+                img:hover{
+                    transform: scale(1.05);
+                }
             }
-            .aboutImg:hover{
-                transform: scale(1.05);
-            }
+
         }
 
     }
