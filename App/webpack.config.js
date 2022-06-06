@@ -29,6 +29,7 @@ Encore
     .addStyleEntry('scss/galerie', './assets/styles/galerie.scss')
 
     .addEntry('js/menuBtn', './assets/js/menuBtn.js')
+    .addEntry('js/carousel', './assets/js/carousel.js')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
