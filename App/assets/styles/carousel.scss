@@ -1,0 +1,30 @@
+.carousel{
+  position: relative;
+  overflow: hidden;
+  .carousel__container{
+    content: '';
+    clear: both;
+    display: table;
+  }
+  .carousel__item{
+    float: left;
+  }
+  .carousel__next, .carousel__prev{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #2d61c2;
+    border-radius: 50%;
+    top: 50%;
+    margin-top: -20px;
+    right: 0;
+    box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+    cursor: pointer;
+  }
+
+  .carousel__prev{
+    right: auto;
+    left: 0;
+  }
+}
+

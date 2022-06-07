@@ -1,21 +1,14 @@
 $blue: #5c88da;
 $blueHover: #2d61c2;
 
-.carousel{
-  text-align: center;
-  width: 100%;
-}
 .card{
-  width: 100%;
-  height: auto;
-  margin: 1em auto;
+  margin: 1em;
   box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
   transition: transform 0.3s;
   border-radius: 0.75rem;
   overflow: hidden;
   img{
-    width: 100%;
-    height: auto;
+    max-width: 100%;
   }
   .CardContent{
     padding: 1em;

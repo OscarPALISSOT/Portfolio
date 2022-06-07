@@ -27,6 +27,7 @@ Encore
     .addStyleEntry('scss/aboutMe', './assets/styles/aboutMe.scss')
     .addStyleEntry('scss/section', './assets/styles/section.scss')
     .addStyleEntry('scss/card', './assets/styles/card.scss')
+    .addStyleEntry('scss/carousel', './assets/styles/carousel.scss')
 
     .addEntry('js/menuBtn', './assets/js/menuBtn.js')
     .addEntry('js/carousel', './assets/js/carousel.js')
