@@ -6,22 +6,32 @@ $blueHover: #2d61c2;
   width: 100%;
 }
 .card{
-  width: 250px;
-  height: 180px;
+  width: 100%;
+  height: auto;
   margin: 1em auto;
   box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+  transition: transform 0.3s;
+  border-radius: 0.75rem;
+  overflow: hidden;
   img{
     width: 100%;
     height: auto;
   }
+  .CardContent{
+    padding: 1em;
+    .titleCard{
+      h1{
+        font-size: 1.75em;
+      }
+    }
+  }
 }
 // XSmall devices (Portrait phones, 320px and up)
 @media (min-width: 320px) {
-
 }
 
-// Small devices (landscape phones, 450px and up)
-@media (min-width: 450px) {
+// Small devices (landscape phones, 425px and up)
+@media (min-width: 425px) {
 
 }
 
