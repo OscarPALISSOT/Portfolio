@@ -4,16 +4,18 @@ class Carousel{
      *
      * @param {HTMLElement} element
      * @param {Object} options
-     * @param {Object} options.SlideToScroll Nb d'éléments à faire défiler
-     * @param {Object} options.SlidesVisibles Nb d'éléments visible
-     * @param {Boolean} options.Loop Boucle en bord de carousel
+     * @param {Object} [options.SlideToScroll=1] Nb d'éléments à faire défiler
+     * @param {Object} [options.SlidesVisibles=1] Nb d'éléments visible
+     * @param {Boolean} [options.Loop=false] Boucle en bord de carousel
+     * @param {Boolean} [options.Pagination=false] Affiche la pagination des slides
      */
     constructor (element, options = {} ) {
         this.element = element
         this.options = Object.assign({}, {
             SlidesToScroll: 1,
             SlidesVisibles: 1,
-            Loop: false
+            Loop: false,
+            Pagination: false
         }, options)
         let children = [].slice.call(element.children)
         this.IsPhone = false
@@ -34,6 +36,10 @@ class Carousel{
         })
         this.setStyle()
         this.CreateNavigation()
+        if (this.options.Pagination){
+            this.CreatePagination()
+        }
+
 
         //event
         this.moveCallbacks.forEach(cb => cb(0))
@@ -81,6 +87,26 @@ class Carousel{
                 nextButton.classList.remove('carousel__next--hidden')
             }
         })
+    }
+
+
+    CreatePagination() {
+        let pagination = this.CreateDivWithChild('carousel__pagination')
+        let buttons = []
+        this.root.appendChild(pagination)
+        for (let i = 0; i < this.items.length; i = i + this.options.SlidesToScroll){
+            let button = this.CreateDivWithChild('carousel__pagination__button')
+            button.addEventListener('click', () => this.GoToItem(i))
+            pagination.appendChild(button)
+            buttons.push(button)
+        }
+        this.OnMove(index =>{
+            let ActiveButton = buttons[Math.floor(index / this.options.SlidesToScroll)]
+            if (ActiveButton){
+                buttons.forEach(button => button.classList.remove('carousel__pagination__button--active'))
+                ActiveButton.classList.add('carousel__pagination__button--active')
+            }
+        } )
     }
 
 
@@ -177,9 +203,10 @@ class Carousel{
 
 document.addEventListener('DOMContentLoaded', function () {
     new Carousel(document.querySelector('#carousel1'), {
-        SlidesToScroll: 2,
+        SlidesToScroll: 3,
         SlidesVisibles: 3,
-        Loop: false
+        Loop: true,
+        Pagination: true
     })
 })
 
