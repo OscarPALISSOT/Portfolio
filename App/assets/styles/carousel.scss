@@ -37,6 +37,7 @@
 
   .carousel__next--hidden, .carousel__prev--hidden{
     opacity: 0;
+    cursor: default;
   }
 }
 

@@ -16,12 +16,16 @@ class Carousel{
             Loop: false
         }, options)
         let children = [].slice.call(element.children)
+        this.IsPhone = false
         this.currentItem = 0
+        this.moveCallbacks = []
+
+        //Modif du Dom
         this.root = this.CreateDivWithChild('carousel')
         this.container = this.CreateDivWithChild('carousel__container')
+        this.root.setAttribute('tabindex', '0')
         this.root.appendChild(this.container)
         this.element.appendChild(this.root)
-        this.moveCallbacks = []
         this.items = children.map((child) => {
             let item = this.CreateDivWithChild('carousel__item')
             item.appendChild(child)
@@ -30,7 +34,18 @@ class Carousel{
         })
         this.setStyle()
         this.CreateNavigation()
+
+        //event
         this.moveCallbacks.forEach(cb => cb(0))
+        this.OnWindowResize()
+        window.addEventListener('resize', this.OnWindowResize.bind(this))
+        this.root.addEventListener('keyup', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'Right'){
+                this.Next()
+            } else if (e.key === 'ArrowLeft' || e.key === 'Left'){
+                this.Prev()
+            }
+        })
     }
 
 
@@ -38,9 +53,9 @@ class Carousel{
      * Applique les dimensions aux différentes div
      */
     setStyle() {
-        let ratio = this.items.length / this.options.SlidesVisibles
+        let ratio = this.items.length / this.SlidesVisibles
         this.container.style.width = (ratio * 100 + '%')
-        this.items.forEach( item => item.style.width = ((100 / this.options.SlidesVisibles) /  ratio ) + '%')
+        this.items.forEach( item => item.style.width = ((100 / this.SlidesVisibles) /  ratio ) + '%')
     }
 
 
@@ -60,7 +75,7 @@ class Carousel{
             } else {
                 prevButton.classList.remove('carousel__prev--hidden')
             }
-            if (this.items[this.currentItem + this.options.SlidesVisibles] === undefined){
+            if (this.items[this.currentItem + this.SlidesVisibles] === undefined){
                 nextButton.classList.add('carousel__next--hidden')
             } else {
                 nextButton.classList.remove('carousel__next--hidden')
@@ -70,11 +85,11 @@ class Carousel{
 
 
     Next() {
-        this.GoToItem(this.currentItem + this.options.SlidesToScroll)
+        this.GoToItem(this.currentItem + this.SlidesToScroll)
     }
 
     Prev() {
-        this.GoToItem(this.currentItem - this.options.SlidesToScroll)
+        this.GoToItem(this.currentItem - this.SlidesToScroll)
     }
 
 
@@ -85,9 +100,17 @@ class Carousel{
      */
     GoToItem(index){
         if( index < 0){
-            index = this.items.length - this.options.SlidesVisibles
-        } else if (index >= this.items.length || (this.items[this.currentItem + this.options.SlidesVisibles] === undefined && index > this.currentItem)){
-            index = 0
+            if (this.options.Loop){
+                index = this.items.length - this.SlidesVisibles
+            } else {
+                return
+            }
+        } else if (index >= this.items.length || (this.items[this.currentItem + this.SlidesVisibles] === undefined && index > this.currentItem)){
+            if (this.options.Loop){
+                index = 0
+            } else {
+                return
+            }
         }
         let translateX = index * -100 / this.items.length
         this.container.style.transform = 'translate3d(' + translateX +'%, 0, 0)'
@@ -104,6 +127,15 @@ class Carousel{
         this.moveCallbacks.push(cb)
     }
 
+    OnWindowResize () {
+        let phone = window.innerWidth < 800
+        if (phone !== this.IsPhone){
+            this.IsPhone = phone
+            this.setStyle()
+            this.moveCallbacks.forEach(cb => cb(this.currentItem))
+        }
+    }
+
     /**
      *
      * @param {string}className
@@ -115,11 +147,31 @@ class Carousel{
         return div
     }
 
+
+    /**
+     *
+     * @returns {number}
+     */
+    get SlidesToScroll () {
+        if (this.IsPhone){
+            return 1
+        } else {
+            return this.options.SlidesToScroll
+        }
+    }
+
+    /**
+     *
+     * @returns {number}
+     */
+    get SlidesVisibles () {
+        if (this.IsPhone){
+            return 1
+        } else {
+            return this.options.SlidesVisibles
+        }
+    }
 }
-
-
-
-
 
 
 
