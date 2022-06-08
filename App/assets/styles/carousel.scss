@@ -16,7 +16,8 @@
     position: absolute;
     width: 40px;
     height: 40px;
-    background-color: #2d61c2;
+    background: #2d61c2 url(chevron-right-solid.svg) center center no-repeat;
+    background-size: 20px 20px;
     border-radius: 50%;
     top: 50%;
     margin-top: -20px;
@@ -27,6 +28,7 @@
   }
 
   .carousel__prev{
+    background-image: url(chevron-left-solid.svg);
     right: auto;
     left: -20px;
   }
