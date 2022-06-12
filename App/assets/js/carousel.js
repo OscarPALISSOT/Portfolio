@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function () {
     new Carousel(document.querySelector('#carousel1'), {
         SlidesToScroll: 3,
         SlidesVisibles: 3,
-        Loop: true,
+        Loop: false,
         Pagination: true
     })
 })

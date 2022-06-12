@@ -108,6 +108,7 @@ a{
         top: 0;
         background-color: #e8e8e8;
         z-index: 2;
+        margin-bottom: 0;
     }
 
     .name{
@@ -173,9 +174,6 @@ a{
 }
 
 @media (min-width: 1050px) {
-    .header{
-        margin-bottom: 3em;
-    }
     .navigation{
         .menuItems{
             li{

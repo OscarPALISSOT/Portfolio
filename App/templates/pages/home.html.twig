@@ -13,18 +13,9 @@
 
 {% block body %}
     <main>
-        <section class="aboutMe">
-            <h1 class="title">Qui suis-je ?</h1>
-            <h2 class="subTitle">Etudiant ingénieur</h2>
-            <div class="aboutContent">
-                <div class="aboutImg">
-                    <img src="{{ asset ('img/faceBlob.png') }}" alt="">
-                </div>
-                <p class="aboutText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-            <a class="btn CVbtn" href="">Télécharger mon CV<i class="far fa-address-card"></i></a>
-        </section>
 
+        {% include 'pages/AboutMe.html.twig' %}
         {% include 'pages/experiences.html.twig' %}
+        {% include 'pages/ContactMe.html.twig' %}
     </main>
 {% endblock %}
