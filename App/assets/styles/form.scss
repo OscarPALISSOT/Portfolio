@@ -1,0 +1,57 @@
+$blue: #5c88da;
+$blueHover: #2d61c2;
+
+
+section .contentSection .title {
+  margin-bottom: 1em;
+}
+.contactMail{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .input {
+    position: relative;
+    width: 100%;
+    .input__field{
+      padding: 0.25em;
+      font-size: 1.5em;
+      background: transparent;
+      border: none;
+      border-bottom: solid 4px $blue ;
+      margin: 1em 0;
+      width: 100%;
+    }
+    .input__field:focus, .input__field:focus-visible{
+      border: none;
+      border-bottom: solid 5px $blueHover ;
+      outline: none;
+    }
+    .input__field:focus + .input__label{
+      transform: translate(-1em, -150%) scale(0.8);
+    }
+    .input__label{
+      position: absolute;
+      left: 0;
+      top: 50%;
+      font-weight: bold;
+      margin: 0 1em;
+      background: transparent;
+      transform: translateY(-50%);
+      transition: transform 0.2s ease-in-out;
+    }
+
+  }
+}
+
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .contactMail{
+    .input {
+      .input__field{
+        width: 33vw;
+      }
+    }
+  }
+}

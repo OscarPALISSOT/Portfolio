@@ -1,11 +1,13 @@
 section{
-  .title{
-    font-size: 2.25em;
-    margin-bottom: 0.4rem;
-  }
-  .subTitle{
-    font-size: 1.5em;
-    margin-bottom: 0.4rem;
+  .contentSection{
+    .title{
+      font-size: 2.25em;
+      margin-bottom: 0.4rem;
+    }
+    .subTitle{
+      font-size: 1.5em;
+      margin-bottom: 0.4rem;
+    }
   }
 }
 
@@ -16,5 +18,8 @@ section{
     display: flex;
     align-items: center;
     height: calc(100vh - 100px);
+    .contentSection{
+      width: 100%;
+    }
   }
 }
