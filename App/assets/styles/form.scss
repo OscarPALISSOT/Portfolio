@@ -1,18 +1,58 @@
 $blue: #5c88da;
 $blueHover: #2d61c2;
+$background : #e8e8e8;
 
 
 section .contentSection .title {
   margin-bottom: 1em;
 }
+
+.ContentSection{
+  width: 100%;
+}
+
+span{
+  font-size: 1.2em;
+}
+
 .contactMail{
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  #messageLabel{
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    margin: 0 1em;
+    transform: translateY(50%);
+    transition: transform 0.2s ease-in-out;
+  }
+  #message:focus + #messageLabel{
+    transform: translate(-1em, -1em) scale(0.8);
+  }
+
+  #messageArea{
+    margin-top: 1em;
+  }
+
   .input {
     position: relative;
     width: 100%;
+
+    #message{
+      border: solid 4px $blue;
+      border-top: none;
+      border-radius: 0 0 0.75rem 0.75rem;
+      background: $background;
+      background: transparent;
+      padding: 0 1em;
+    }
+    #message:focus{
+      border: solid 5px $blueHover ;
+      border-top: none;
+    }
     .input__field{
       padding: 0.25em;
       font-size: 1.5em;
@@ -21,6 +61,7 @@ section .contentSection .title {
       border-bottom: solid 4px $blue ;
       margin: 1em 0;
       width: 100%;
+      z-index: 1;
     }
     .input__field:focus, .input__field:focus-visible{
       border: none;
@@ -39,6 +80,7 @@ section .contentSection .title {
       background: transparent;
       transform: translateY(-50%);
       transition: transform 0.2s ease-in-out;
+      z-index: 0;
     }
 
   }
@@ -49,6 +91,7 @@ section .contentSection .title {
 @media (min-width: 992px) {
   .contactMail{
     .input {
+      width: auto;
       .input__field{
         width: 33vw;
       }
