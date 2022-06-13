@@ -1,0 +1,63 @@
+$blue: #5c88da;
+$blueHover: #2d61c2;
+$background : #e8e8e8;
+
+.skillItems{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: auto;
+  .skill{
+    cursor: pointer;
+    margin: 2em 1em;
+    box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+    transition: transform 0.3s;
+    border-radius: 0.75rem;
+    height: 100px;
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    .icon{
+      height: 100%;
+      width: 100px;
+      padding: auto;
+      color: $blue;
+      font-size: 3em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .skillTitles{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      .titleSkill{
+        font-size: 0.6em;
+      }
+      .subTitleSkill{
+        font-size: 0.6em;
+        h2{
+          color: grey;
+        }
+      }
+    }
+  }
+}
+
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+
+  .skill:hover{
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+
+
+
+

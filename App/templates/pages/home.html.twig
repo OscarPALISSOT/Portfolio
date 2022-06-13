@@ -8,6 +8,7 @@
     {{ encore_entry_link_tags('scss/form') }}
     {{ encore_entry_link_tags('scss/contactLink') }}
     {{ encore_entry_link_tags('scss/contact') }}
+    {{ encore_entry_link_tags('scss/skills') }}
 {% endblock %}
 
 {% block javascripts %}
@@ -17,6 +18,7 @@
 {% block body %}
     <main>
         {% include 'pages/AboutMe.html.twig' %}
+        {% include 'pages/skills.html.twig' %}
         {% include 'pages/experiences.html.twig' %}
         {% include 'pages/ContactMe.html.twig' %}
     </main>

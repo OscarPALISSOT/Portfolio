@@ -31,6 +31,7 @@ Encore
     .addStyleEntry('scss/contact', './assets/styles/contact.scss')
     .addStyleEntry('scss/form', './assets/styles/form.scss')
     .addStyleEntry('scss/contactLink', './assets/styles/contactLink.scss')
+    .addStyleEntry('scss/skills', './assets/styles/skills.scss')
 
     .addEntry('js/menuBtn', './assets/js/menuBtn.js')
     .addEntry('js/carousel', './assets/js/carousel.js')
