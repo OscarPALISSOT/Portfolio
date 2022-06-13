@@ -32,9 +32,11 @@ Encore
     .addStyleEntry('scss/form', './assets/styles/form.scss')
     .addStyleEntry('scss/contactLink', './assets/styles/contactLink.scss')
     .addStyleEntry('scss/skills', './assets/styles/skills.scss')
+    .addStyleEntry('scss/skillModal', './assets/styles/skillModal.scss')
 
     .addEntry('js/menuBtn', './assets/js/menuBtn.js')
     .addEntry('js/carousel', './assets/js/carousel.js')
+    .addEntry('js/skills', './assets/js/skills.js')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
