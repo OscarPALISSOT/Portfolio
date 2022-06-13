@@ -52,7 +52,7 @@ span{
       border-bottom: solid 4px $blue ;
       margin: 1em 0;
       width: 100%;
-      z-index: 1;
+      transition: border-bottom 0.15s ease-in-out;
     }
     .input__field:focus, .input__field:focus-visible{
       border: none;
@@ -71,7 +71,6 @@ span{
       background: transparent;
       transform: translateY(-50%);
       transition: transform 0.2s ease-in-out;
-      z-index: 0;
     }
 
   }
