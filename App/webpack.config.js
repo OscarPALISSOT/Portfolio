@@ -28,7 +28,9 @@ Encore
     .addStyleEntry('scss/section', './assets/styles/section.scss')
     .addStyleEntry('scss/card', './assets/styles/card.scss')
     .addStyleEntry('scss/carousel', './assets/styles/carousel.scss')
+    .addStyleEntry('scss/contact', './assets/styles/contact.scss')
     .addStyleEntry('scss/form', './assets/styles/form.scss')
+    .addStyleEntry('scss/contactLink', './assets/styles/contactLink.scss')
 
     .addEntry('js/menuBtn', './assets/js/menuBtn.js')
     .addEntry('js/carousel', './assets/js/carousel.js')
