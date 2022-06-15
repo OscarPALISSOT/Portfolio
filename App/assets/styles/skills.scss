@@ -14,7 +14,7 @@ $background : #e8e8e8;
     margin: 2em 1em;
     box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
     transition: transform 0.3s ease-in-out, border 0.1s ease-in-out;
-    border: solid 0px $blueHover;
+    border: solid 0 $blueHover;
     border-radius: 0.75rem;
     height: 100px;
     width: 400px;
@@ -40,6 +40,7 @@ $background : #e8e8e8;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
+        font-size: 0.5em;
         .titleSkill{
           font-size: 0.6em;
         }
@@ -62,6 +63,34 @@ $background : #e8e8e8;
   }
 }
 
+// Small devices (landscape phones, 425 and up)
+@media (min-width: 425px) {
+  .skillItems {
+    .skill {
+      .leftSkill {
+        .skillTitles {
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+}
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .skillItems {
+    .skill {
+      .leftSkill {
+        .skillTitles {
+          font-size: 1em;
+        }
+      }
+    }
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {}
+
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
@@ -69,6 +98,14 @@ $background : #e8e8e8;
   .skill:hover{
     transform: translate3d(0, -10px, 0);
   }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}
+
+// Double Extra large devices (x-large desktops, 1200px and up)
+@media (min-width: 1700px) {
 }
 
 
