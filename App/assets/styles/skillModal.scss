@@ -25,6 +25,7 @@ $background : #e8e8e8;
     .modalTop{
       display: flex;
       justify-content: space-between;
+      border-bottom: solid grey 2px;
       i{
         font-size: 3em;
         cursor: pointer;
