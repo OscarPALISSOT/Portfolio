@@ -10,6 +10,7 @@
     {{ encore_entry_link_tags('scss/contact') }}
     {{ encore_entry_link_tags('scss/skills') }}
     {{ encore_entry_link_tags('scss/skillModal') }}
+    {{ encore_entry_link_tags('scss/footer') }}
 {% endblock %}
 
 {% block javascripts %}
@@ -24,4 +25,5 @@
         {% include 'pages/experiences.html.twig' %}
         {% include 'pages/ContactMe.html.twig' %}
     </main>
+    {% include 'pages/footer.html.twig' %}
 {% endblock %}
