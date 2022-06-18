@@ -14,6 +14,7 @@
         {{ encore_entry_link_tags('scss/header') }}
         {{ encore_entry_link_tags('scss/menuBtn') }}
         {{ encore_entry_link_tags('scss/section') }}
+        {{ encore_entry_link_tags('scss/footer') }}
 
         {% block stylesheets %}
         {% endblock %}
@@ -36,10 +37,10 @@
                     </div>
                 </label>
                 <ul class="menuItems">
-                    <li><a href="#about" class="link">Qui suis-je ?</a></li>
-                    <li><a href="#skill" class="link">Compétences</a></li>
-                    <li><a href="#experience" class="link">Expériences</a></li>
-                    <li><a href="#contact" class="link">Me contacter</a></li>
+                    <li><a href="#about" class="link">{% trans %}Who am I?{% endtrans %}</a></li>
+                    <li><a href="#skill" class="link">{% trans %}Skills{% endtrans %}</a></li>
+                    <li><a href="#experience" class="link">{% trans %}Experiences{% endtrans %}</a></li>
+                    <li><a href="#contact" class="link">{% trans %}Contact me{% endtrans %}</a></li>
                 </ul>
             </nav>
         </div>
@@ -47,6 +48,14 @@
         {% block body %}
 
         {% endblock %}
+
+
+        <div class="footer">
+            <a href="" class="footerLink">{% trans %}Who am I?{% endtrans %}</a>
+            <a href="" class="footerLink">{% trans %}Skills{% endtrans %}</a>
+            <a href="" class="footerLink">{% trans %}Experiences{% endtrans %}</a>
+            <a href="" class="footerLink">{% trans %}Contact me{% endtrans %}</a>
+        </div>
     </body>
 
     

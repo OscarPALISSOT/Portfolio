@@ -1,19 +1,19 @@
 
 <section class="ContactMe" id="contact">
     <div class="ContentSection">
-        <h1 class="title">Me contacter :</h1>
+        <h1 class="title">{% trans %}Contact me :{% endtrans %}</h1>
         <form action="" class="contactMail">
             <label for="" class="input">
                 <input type="text" class="mail input__field">
-                <span class="input__label">Courriel :</span>
+                <span class="input__label">{% trans %}Email :{% endtrans %}</span>
             </label>
             <label for="" class="input">
                 <input type="text" class="objet input__field">
-                <span class="input__label">Objet :</span>
+                <span class="input__label">{% trans %}Object :{% endtrans %}</span>
             </label>
             <label for="" class="input" id="messageArea">
                 <textarea name="message" id="message" cols="30" rows="10" class="contentMail input__field"></textarea>
-                <span id="messageLabel">Votre message :</span>
+                <span id="messageLabel">{% trans %}Your message :{% endtrans %}</span>
             </label>
         </form>
         <div class="networks">
