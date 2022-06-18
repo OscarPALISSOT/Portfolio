@@ -1,0 +1,30 @@
+.switchLanguages{
+  height: 100px;
+  width: 80px;
+  background: greenyellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .switchLanguagesBtn{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    img{
+      cursor: pointer;
+      border-radius: 0.2em;
+      width: 40px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .selectLanguage{
+      transform: translate(-35%, -35%);
+    }
+    .unSelectedLanguage{
+      transform: translate(-65%, -65%);
+    }
+  }
+
+}

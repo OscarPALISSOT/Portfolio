@@ -34,6 +34,7 @@ Encore
     .addStyleEntry('scss/skills', './assets/styles/skills.scss')
     .addStyleEntry('scss/skillModal', './assets/styles/skillModal.scss')
     .addStyleEntry('scss/footer', './assets/styles/footer.scss')
+    .addStyleEntry('scss/switchLanguageBtn', './assets/styles/switchLanguageBtn.scss')
 
     .addEntry('js/menuBtn', './assets/js/menuBtn.js')
     .addEntry('js/carousel', './assets/js/carousel.js')
