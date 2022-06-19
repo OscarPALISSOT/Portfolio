@@ -1,7 +1,11 @@
+#language{
+  border-bottom: none;
+}
+
+
 .switchLanguages{
   height: 100px;
-  width: 80px;
-  background: greenyellow;
+  width: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,12 +17,22 @@
     img{
       cursor: pointer;
       border-radius: 0.2em;
-      width: 40px;
+      width: 100%;
       position: absolute;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
+      transition: transform 0.2s ease-in-out;
+    }
+    img:hover{
+      transform: translate(-50%, -50%) scale(1.2);
     }
   }
+}
 
+
+@media (min-width: 1150px) {
+  .switchLanguages{
+    width: 40px;
+  }
 }

@@ -42,7 +42,7 @@
                     <li><a href="#skill" class="link">{% trans %}Skills{% endtrans %}</a></li>
                     <li><a href="#experience" class="link">{% trans %}Experiences{% endtrans %}</a></li>
                     <li><a href="#contact" class="link">{% trans %}Contact me{% endtrans %}</a></li>
-                    <li>
+                    <li id="language">
                         <div class="switchLanguages">
                             {% for locale in locales %}
                                 {%  if locale != app.request.locale %}
