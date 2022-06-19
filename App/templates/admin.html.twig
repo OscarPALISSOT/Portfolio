@@ -10,6 +10,9 @@
     <link rel="icon" type="image/x-icon" href="/img/favicon.svg?v=2">
     <script src="https://kit.fontawesome.com/695ef1a9d2.js" crossorigin="anonymous"></script>
 
+    {{ encore_entry_link_tags('scss/base') }}
+    {{ encore_entry_link_tags('scss/adminSideNav') }}
+
     {% block stylesheets %}
     {% endblock %}
 
@@ -17,6 +20,15 @@
     {% endblock %}
 </head>
 <body>
+
+<div class="sidenav">
+    <ul>
+        <li><a href="">Compétences</a></li>
+        <li><a href="">Expériences</a></li>
+        <li><a href="/logout">Déconnexion</a></li>
+    </ul>
+
+</div>
 
 {% block body %}
 
