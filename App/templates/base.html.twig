@@ -44,10 +44,13 @@
                     <li><a href="#contact" class="link">{% trans %}Contact me{% endtrans %}</a></li>
                     <li>
                         <div class="switchLanguages">
-                            <div class="switchLanguagesBtn">
-                                <img src="{{ asset ('img/fr.svg') }}" alt="fr" id="fr" class="selectLanguage">
-                                <img src="{{ asset ('img/gb.svg') }}" alt="en" id="en" class="unSelectedLanguage">
-                            </div>
+                            {% for locale in locales %}
+                                {%  if locale != app.request.locale %}
+                                    <a href="{{ path('ChangeLocale', {'locale': locale}) }}" class="switchLanguagesBtn">
+                                        <img src="{{ asset ('img/'~locale~'.svg') }}" alt="{{ locale }}">
+                                    </a>
+                                {% endif %}
+                            {% endfor %}
                         </div>
                     </li>
                 </ul>
