@@ -3,30 +3,60 @@
     <div class="ContentSection skillsContent">
         <h1 class="title">{% trans %}My skills :{% endtrans %}</h1>
         <div class="skillItems">
-            {% for i in 0..7 %}
-                <div class="skill">
-                    <div class="leftSkill">
-                        <div class="icon"><i class="fa-solid fa-code"></i></div>
-                        <div class="skillTitles">
-                            <div class="titleSkill"><h1>Dev Web</h1></div>
-                            <div class="subTitleSkill"><h2>Plus de 2 ans</h2></div>
+            {% if app.request.locale == 'en' %}
+                {% for skill in skills %}
+                    <div class="skill">
+                        <div class="leftSkill">
+                            <div class="icon">{{ skill.skillIcon|raw }}</div>
+                            <div class="skillTitles">
+                                <div class="titleSkill"><h1>{{ skill.skillEn }}</h1></div>
+                                <div class="subTitleSkill"><h2>{{ skill.SubTitleSkillEn }}</h2></div>
+                            </div>
+                        </div>
+                        <div class="rightSkill">
+                            <div class="icon"><i class="fa-solid fa-square-plus"></i></div>
                         </div>
                     </div>
-                    <div class="rightSkill">
-                        <div class="icon"><i class="fa-solid fa-square-plus"></i></div>
-                    </div>
-                </div>
-                <div class="skillModalBackground">
-                    <div class="skillModal">
-                        <div class="modalTop">
-                            <h1 class="skillmodalTitle">Dev Web</h1>
-                            <i class="fa-solid fa-xmark closeModal"></i>
+                    <div class="skillModalBackground">
+                        <div class="skillModal">
+                            <div class="modalTop">
+                                <h1 class="skillmodalTitle">{{ skill.skillEn }}</h1>
+                                <i class="fa-solid fa-xmark closeModal"></i>
+                            </div>
+                            <h2 class="skillmodalSubTitle">{{ skill.SubTitleSkillEn }}</h2>
+                            <p class="skillmodalText">{{ skill.skillDescriptionEn }}</p>
                         </div>
-                        <h2 class="skillmodalSubTitle">Plus de 2 ans</h2>
-                        <p class="skillmodalText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            {% endif %}
+
+
+            {% if app.request.locale == 'fr' %}
+                {% for skill in skills %}
+                    <div class="skill">
+                        <div class="leftSkill">
+                            <div class="icon"><i class="fa-solid fa-code"></i></div>
+                            <div class="skillTitles">
+                                <div class="titleSkill"><h1>Dev Web</h1></div>
+                                <div class="subTitleSkill"><h2>Plus de 2 ans</h2></div>
+                            </div>
+                        </div>
+                        <div class="rightSkill">
+                            <div class="icon"><i class="fa-solid fa-square-plus"></i></div>
+                        </div>
+                    </div>
+                    <div class="skillModalBackground">
+                        <div class="skillModal">
+                            <div class="modalTop">
+                                <h1 class="skillmodalTitle">Dev Web</h1>
+                                <i class="fa-solid fa-xmark closeModal"></i>
+                            </div>
+                            <h2 class="skillmodalSubTitle">Plus de 2 ans</h2>
+                            <p class="skillmodalText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
         </div>
     </div>
 </section>

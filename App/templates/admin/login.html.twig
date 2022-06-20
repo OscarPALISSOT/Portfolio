@@ -11,32 +11,21 @@
         <h3 id="titleContainer">Veuillez vous authentifier</h3>
 
         {% if error %}
-            <div class="col-4" id="error">
-                <div class="card">
-                    <div class="card-body">
-                        {{error.messageKey | trans(error.messagedata, 'security')}}
-                    </div>
-                </div>
-            </div>
+            {{error.messageKey | trans(error.messagedata, 'security')}}
         {% endif %}
 
 
-        <form class="container" action="{{path('login')}}" method="post" autocomplete="off">
+        <form action="{{path('login')}}" method="post" autocomplete="off">
 
-            <div class="col-4" id="loginForm">
-                <div class="form-floating mb-3">
-                    <input type="text" id="username" name="_username"  aria-label="Username" aria-describedby="basic-addon1" value="{{lastUsername}}" class="col-sm form-control" placeholder="Login" />
-                    <label for="Login">Login</label>
-                </div>
+            <div id="loginForm">
+                <input type="text" id="username" name="_username"  aria-label="Username" aria-describedby="basic-addon1" value="{{lastUsername}}" class="col-sm form-control" placeholder="Login" />
+                <label for="Login">Login</label>
 
-                <div class="form-floating mb-3">
-                    <input type="password"  name="_password" aria-label="Username" aria-describedby="basic-addon1" class="col-sm form-control" id="password" required="required" placeholder="Mot de passe" />
-                    <label for="password">Mot de passe</label>
-                </div>
+                <input type="password"  name="_password" aria-label="Username" aria-describedby="basic-addon1" class="col-sm form-control" id="password" required="required" placeholder="Mot de passe" />
+                <label for="password">Mot de passe</label>
 
                 <button type="submit" class="btn btn-outline-secondary">S'authentifier</button>
             </div>
-
         </form>
     </main>
 {% endblock %}

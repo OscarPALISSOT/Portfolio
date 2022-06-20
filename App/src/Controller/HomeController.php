@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\SkillsRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -10,16 +11,23 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController {
 
 
+    public function __construct(SkillsRepository $skillsRepository)
+    {
+        $this->skillRepository = $skillsRepository;
+    }
+
     public function index() : Response{
 
-        return $this->render('pages/home.html.twig', [
+        $skills = $this->skillRepository->findAll();
 
+        return $this->render('pages/home.html.twig', [
+            'skills' => $skills,
         ]);
     }
 
 
     /**
-     * changement de la langue
+     * Changement de la langue
      * @route("/change-locale/{locale}", name="ChangeLocale")
      * @param $locale
      * @param Request $request
