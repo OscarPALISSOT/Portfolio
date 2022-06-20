@@ -3,7 +3,6 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Experiences;
-use App\Form\ExperienceFormType;
 use App\Form\ExperiencesFormType;
 use App\Repository\ExperiencesRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -12,7 +11,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
+
+/**
+ * @Vich\Uploadable
+ */
 class ExperiencesController extends AbstractController
 {
     public function __construct(ExperiencesRepository $repository)
