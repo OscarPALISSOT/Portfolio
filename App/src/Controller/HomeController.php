@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\ExperiencesRepository;
 use App\Repository\SkillsRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -11,17 +12,20 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController {
 
 
-    public function __construct(SkillsRepository $skillsRepository)
+    public function __construct(SkillsRepository $skillsRepository, ExperiencesRepository $experiencesRepository)
     {
         $this->skillRepository = $skillsRepository;
+        $this->experiencesRepository = $experiencesRepository;
     }
 
     public function index() : Response{
 
         $skills = $this->skillRepository->findAll();
+        $experiences = $this->experiencesRepository->findAll();
 
         return $this->render('pages/home.html.twig', [
             'skills' => $skills,
+            'experiences' => $experiences,
         ]);
     }
 

@@ -3,19 +3,37 @@
         <div class="ContentSection">
                 <h1 class="title">{% trans %}My experiences :{% endtrans %}</h1>
                 <div id="carousel1">
-                        {% for i in 0..6  %}
-                                <div class="item card">
-                                        <img src="{{ asset ('img/testProj.png') }}" alt="">
-                                        <div class="CardContent">
-                                                <div class="titleCard">
-                                                        <h1>Lorem ipsum dolor sit amet</h1>
-                                                </div>
-                                                <div class="CardDescription">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                        {% if app.request.locale =='en' %}
+                                {% for experience in experiences  %}
+                                        <div class="item card">
+                                                <img src="{{ asset ('img/testProj.png') }}" alt="">
+                                                <div class="CardContent">
+                                                        <div class="titleCard">
+                                                                <h1>{{ experience.experienceEn }}</h1>
+                                                        </div>
+                                                        <div class="CardDescription">
+                                                                <p>{{ experience.experienceSubTitleEn }}</p>
+                                                        </div>
                                                 </div>
                                         </div>
-                                </div>
-                        {% endfor %}
+                                {% endfor %}
+                        {% endif %}
+
+                        {% if app.request.locale =='fr' %}
+                                {% for experience in experiences  %}
+                                        <div class="item card">
+                                                <img src="{{ asset ('img/testProj.png') }}" alt="">
+                                                <div class="CardContent">
+                                                        <div class="titleCard">
+                                                                <h1>{{ experience.experienceFr }}</h1>
+                                                        </div>
+                                                        <div class="CardDescription">
+                                                                <p>{{ experience.experienceSubTitleFr }}</p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                {% endfor %}
+                        {% endif %}
                 </div>
         </div>
 </section>
