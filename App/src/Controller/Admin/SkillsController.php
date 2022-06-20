@@ -87,12 +87,11 @@ class SkillsController extends AbstractController
      * @Route ("/Admin/Skill/{id}", name="delete_skill", methods="DELETE")
      * @return Response
      */
-    public function deleteSkill(Skills $skill, Request $request){
+    public function deleteSkill(Skills $skill, Request $request, ManagerRegistry $entityManager){
 
         if ($this->isCsrfTokenValid("delete", $request->get('_token'))){
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($skill);
-            $em->flush();
+            $entityManager->getManager()->remove($skill);
+            $entityManager->getManager()->flush();
         }
 
         return $this->redirectToRoute('gestion_skills');

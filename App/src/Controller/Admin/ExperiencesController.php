@@ -88,12 +88,11 @@ class ExperiencesController extends AbstractController
      * @Route ("/Admin/Experience/{id}", name="delete_experience", methods="DELETE")
      * @return Response
      */
-    public function deleteExperience(Experiences $experience, Request $request){
+    public function deleteExperience(Experiences $experience, Request $request, ManagerRegistry $entityManager){
 
         if ($this->isCsrfTokenValid("delete", $request->get('_token'))){
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($experience);
-            $em->flush();
+            $entityManager->getManager()->remove($experience);
+            $entityManager->getManager()->flush();
         }
 
         return $this->redirectToRoute('gestion_experiences');
