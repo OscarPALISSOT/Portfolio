@@ -8,24 +8,17 @@
 
 {% block body %}
     <main>
-        <h3 id="titleContainer">Veuillez vous authentifier</h3>
+        <h3>Veuillez vous authentifier</h3>
 
         {% if error %}
             {{error.messageKey | trans(error.messagedata, 'security')}}
         {% endif %}
 
+        <form action="{{path('login')}}" method="post" autocomplete="off" class="col-4">
+            <input type="text" id="username" name="_username"  aria-label="Username" aria-describedby="basic-addon1" value="{{lastUsername}}" class="col-sm form-control mb-4" placeholder="Login" />
+            <input type="password"  name="_password" aria-label="Username" aria-describedby="basic-addon1" class="col-sm form-control mb-4" id="password" required="required" placeholder="Mot de passe" />
 
-        <form action="{{path('login')}}" method="post" autocomplete="off">
-
-            <div id="loginForm">
-                <input type="text" id="username" name="_username"  aria-label="Username" aria-describedby="basic-addon1" value="{{lastUsername}}" class="col-sm form-control" placeholder="Login" />
-                <label for="Login">Login</label>
-
-                <input type="password"  name="_password" aria-label="Username" aria-describedby="basic-addon1" class="col-sm form-control" id="password" required="required" placeholder="Mot de passe" />
-                <label for="password">Mot de passe</label>
-
-                <button type="submit" class="btn btn-outline-secondary">S'authentifier</button>
-            </div>
+            <button type="submit" class="btn btn-outline-secondary">S'authentifier</button>
         </form>
     </main>
 {% endblock %}
