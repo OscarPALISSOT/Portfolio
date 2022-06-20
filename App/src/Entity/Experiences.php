@@ -4,14 +4,32 @@ namespace App\Entity;
 
 use App\Repository\ExperiencesRepository;
 use Doctrine\ORM\Mapping as ORM;
+use phpDocumentor\Reflection\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: ExperiencesRepository::class)]
+/**
+ * @Vich\Uploadable
+ */
 class Experiences
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
     private $id;
+
+    /**
+     * @var string|null
+     */
+    #[ORM\Column(type: 'string', length: 255)]
+    private $filename;
+
+    /**
+     * @var \Symfony\Component\HttpFoundation\File\File|null
+     * @Vich\UploadableField(mapping="experiences", fileNameProperty="filename")
+     */
+    private $imageFile;
 
     #[ORM\Column(type: 'string', length: 255)]
     private $Experience_fr;
@@ -33,6 +51,9 @@ class Experiences
 
     #[ORM\Column(type: 'datetime_immutable')]
     private $created_at;
+
+    #[ORM\Column(type: 'datetime_immutable')]
+    private $updated_at;
 
 
     public function __construct()
@@ -126,6 +147,56 @@ class Experiences
     {
         $this->created_at = $created_at;
 
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getFilename(): ?string
+    {
+        return $this->filename;
+    }
+
+    /**
+     * @param string|null $filename
+     * @return Experiences
+     */
+    public function setFilename(?string $filename): self
+    {
+        $this->filename = $filename;
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeImmutable
+    {
+        return $this->updated_at;
+    }
+
+    public function setUpdatedAt(\DateTimeImmutable $updated_at): self
+    {
+        $this->updated_at = $updated_at;
+
+        return $this;
+    }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\File\File|null
+     */
+    public function getImageFile(): ?\Symfony\Component\HttpFoundation\File\File
+    {
+        return $this->imageFile;
+    }
+
+    /**
+     * @param \Symfony\Component\HttpFoundation\File\File|null $imageFile
+     */
+    public function setImageFile(?\Symfony\Component\HttpFoundation\File\File $imageFile): self
+    {
+        $this->imageFile = $imageFile;
+        if ($this->imageFile instanceof UploadedFile) {
+            $this->updated_at = new \DateTimeImmutable('now');
+        }
         return $this;
     }
 }

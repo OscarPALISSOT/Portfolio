@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Experiences;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -18,6 +19,9 @@ class ExperiencesFormType extends AbstractType
             ->add('ExperienceSubTitle_en')
             ->add('ExperienceDescription_fr')
             ->add('ExperienceDescription_en')
+            ->add('imageFile', FileType::class, [
+                'required' => false
+            ]);
         ;
     }
 
