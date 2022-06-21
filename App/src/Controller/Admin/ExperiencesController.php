@@ -85,7 +85,7 @@ class ExperiencesController extends AbstractController
     }
 
     /**
-     * @Route ("/Admin/Experience/{id}", name="delete_experience", methods="DELETE")
+     * @Route ("/Admin/Experience/Delete/{id}", name="delete_experience")
      * @return Response
      */
     public function deleteExperience(Experiences $experience, Request $request, ManagerRegistry $entityManager){

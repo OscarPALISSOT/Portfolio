@@ -84,7 +84,7 @@ class SkillsController extends AbstractController
     }
 
     /**
-     * @Route ("/Admin/Skill/{id}", name="delete_skill", methods="DELETE")
+     * @Route ("/Admin/Skill/Delete/{id}", name="delete_skill")
      * @return Response
      */
     public function deleteSkill(Skills $skill, Request $request, ManagerRegistry $entityManager){
