@@ -21,7 +21,7 @@ class SkillsController extends AbstractController
 
 
     /**
-     * @Route ("/Admin/Skills", name="gestion_skills")
+     * @Route ("/Admin/skills", name="gestion_skills")
      * @param PaginatorInterface $paginator
      * @param Request $request
      * @return Response
@@ -65,7 +65,7 @@ class SkillsController extends AbstractController
 
 
     /**
-     * @Route ("/Admin/Skills/{id}", name="edit_skill")
+     * @Route ("/Admin/skills/{id}", name="edit_skill")
      * @return Response
      */
     public function editSkill(Skills $skill, Request $request, ManagerRegistry $entityManager){

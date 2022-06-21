@@ -46,7 +46,7 @@ class SkillsRepository extends ServiceEntityRepository
     }
 
     // /**
-    //  * @return Skills[] Returns an array of Skills objects
+    //  * @return skills[] Returns an array of skills objects
     //  */
     /*
     public function findByExampleField($value)
@@ -63,7 +63,7 @@ class SkillsRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Skills
+    public function findOneBySomeField($value): ?skills
     {
         return $this->createQueryBuilder('s')
             ->andWhere('s.exampleField = :val')
