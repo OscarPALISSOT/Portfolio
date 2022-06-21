@@ -6,7 +6,9 @@
                         {% if app.request.locale =='en' %}
                                 {% for experience in experiences  %}
                                         <div class="item card">
-                                                <img src="{{ asset ('img/testProj.png') }}" alt="">
+                                                {% if experience.filename %}
+                                                        <img src="{{ vich_uploader_asset(experience, 'imageFile') }}" alt="">
+                                                {% endif %}
                                                 <div class="CardContent">
                                                         <div class="titleCard">
                                                                 <h1>{{ experience.experienceEn }}</h1>
@@ -22,7 +24,9 @@
                         {% if app.request.locale =='fr' %}
                                 {% for experience in experiences  %}
                                         <div class="item card">
-                                                <img src="{{ asset ('img/testProj.png') }}" alt="">
+                                                {% if experience.filename %}
+                                                        <img src="{{ vich_uploader_asset(experience, 'imageFile') }}" alt="">
+                                                {% endif %}
                                                 <div class="CardContent">
                                                         <div class="titleCard">
                                                                 <h1>{{ experience.experienceFr }}</h1>
