@@ -7,7 +7,9 @@
                                 {% for experience in experiences  %}
                                         <div class="item card">
                                                 {% if experience.filename %}
-                                                        <img src="{{ vich_uploader_asset(experience, 'imageFile') }}" alt="">
+                                                    <img src="{{ vich_uploader_asset(experience, 'imageFile') | imagine_filter('thumb') }}" alt="">
+                                                {% else %}
+                                                    <img src="{{ asset('img/no-image.png') | imagine_filter('thumb') }}" alt="">
                                                 {% endif %}
                                                 <div class="CardContent">
                                                         <div class="titleCard">

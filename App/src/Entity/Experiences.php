@@ -4,8 +4,8 @@ namespace App\Entity;
 
 use App\Repository\ExperiencesRepository;
 use Doctrine\ORM\Mapping as ORM;
-use phpDocumentor\Reflection\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: ExperiencesRepository::class)]
@@ -22,11 +22,14 @@ class Experiences
     /**
      * @var string|null
      */
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $filename;
 
     /**
      * @var \Symfony\Component\HttpFoundation\File\File|null
+     * @Assert\Image(
+     *     mimeTypes="image/jpeg"
+     * )
      * @Vich\UploadableField(mapping="experiences", fileNameProperty="filename")
      */
     private $imageFile;
@@ -59,6 +62,7 @@ class Experiences
     public function __construct()
     {
         $this->created_at = new \DateTimeImmutable();
+        $this->updated_at = new \DateTimeImmutable();
     }
 
     public function getId(): ?int
