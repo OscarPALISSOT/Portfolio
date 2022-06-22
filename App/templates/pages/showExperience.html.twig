@@ -1,0 +1,38 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('scss/showExperience') }}
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
+
+{% block body %}
+    <main>
+        {% if app.request.locale =='en' %}
+            <div class="experience">
+                <h1 class="title">{{ experience.experienceEn }}</h1>
+                <h2 class="subTitle">{{ experience.experienceSubTitleEn }}</h2>
+                {% if experience.filename %}
+                    <img src="{{ vich_uploader_asset(experience, 'imageFile') | imagine_filter('thumb') }}" alt="">
+                {% else %}
+                    <img src="{{ asset('img/no-image.png') | imagine_filter('thumb') }}" alt="">
+                {% endif %}
+                <p>{{ experience.experienceDescriptionEn }}</p>
+            </div>
+        {% endif %}
+
+        {% if app.request.locale =='fr' %}
+            <div class="experience">
+                <h1 class="title">{{ experience.experienceFr }}</h1>
+                <h2 class="subTitle">{{ experience.experienceSubTitleFR }}</h2>
+                {% if experience.filename %}
+                    <img src="{{ vich_uploader_asset(experience, 'imageFile') | imagine_filter('thumb') }}" alt="">
+                {% else %}
+                    <img src="{{ asset('img/no-image.png') | imagine_filter('thumb') }}" alt="">
+                {% endif %}
+                <p>{{ experience.experienceDescriptionFr }}</p>
+            </div>
+        {% endif %}
+    </main>
+{% endblock %}

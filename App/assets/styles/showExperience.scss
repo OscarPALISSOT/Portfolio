@@ -1,0 +1,18 @@
+.experience{
+  margin: 2em 0;
+  img{
+    margin: 1em 0;
+    border-radius: 0.75rem;
+    max-width: 100%;
+  }
+}
+
+// Small devices (landscape phones, 992px and up)
+@media (min-width: 992px) {
+  .experience{
+    img{
+      margin: 0 1.5em 1.5em 0;
+      float: left;
+    }
+  }
+}
