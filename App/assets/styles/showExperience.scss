@@ -1,5 +1,12 @@
+$blue: #5c88da;
+$blueHover: #2d61c2;
+$background : #e8e8e8;
+
 .experience{
   margin: 2em 0;
+  a{
+    text-decoration: $blue 2px underline;
+  }
   img{
     margin: 1em 0;
     border-radius: 0.75rem;
