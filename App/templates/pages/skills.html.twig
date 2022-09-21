@@ -24,7 +24,7 @@
                                 <i class="fa-solid fa-xmark closeModal"></i>
                             </div>
                             <h2 class="skillmodalSubTitle">{{ skill.SubTitleSkillEn }}</h2>
-                            <p class="skillmodalText">{{ skill.skillDescriptionEn }}</p>
+                            <p class="skillmodalText">{{ skill.skillDescriptionEn|raw }}</p>
                         </div>
                     </div>
                 {% endfor %}
@@ -52,7 +52,7 @@
                                 <i class="fa-solid fa-xmark closeModal"></i>
                             </div>
                             <h2 class="skillmodalSubTitle">{{ skill.SubTitleSkillFr }}</h2>
-                            <p class="skillmodalText">{{ skill.skillDescriptionFr }}</p>
+                            <p class="skillmodalText">{{ skill.skillDescriptionFr|raw }}</p>
                         </div>
                     </div>
                 {% endfor %}

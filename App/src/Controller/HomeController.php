@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Experiences;
 use App\Repository\ExperiencesRepository;
 use App\Repository\SkillsRepository;
 use Symfony\Component\HttpFoundation\Request;
@@ -26,6 +27,21 @@ class HomeController extends AbstractController {
         return $this->render('pages/home.html.twig', [
             'skills' => $skills,
             'experiences' => $experiences,
+        ]);
+    }
+
+
+    /**
+     * Changement de la langue
+     * @Route ("/Experience/{id}", name="experience")
+     * @param Experiences $experience
+     * @param Request $request
+     * @return Response
+     */
+    public function Experience(Experiences $experience, Request $request) : Response{
+
+        return $this->render('pages/showExperience.html.twig', [
+            'experience' => $experience,
         ]);
     }
 
