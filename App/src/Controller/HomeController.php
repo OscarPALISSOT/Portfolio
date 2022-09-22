@@ -32,7 +32,6 @@ class HomeController extends AbstractController {
 
 
     /**
-     * Changement de la langue
      * @Route ("/Experience/{id}", name="experience")
      * @param Experiences $experience
      * @param Request $request
