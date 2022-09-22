@@ -23,7 +23,7 @@ for(let i = 0; i < links.length; i++){
         body.classList.remove('no-scroll');
         let url = new URL(links[i].href);
         let div = document.querySelector(url.hash);
-        div.scrollIntoView(true);
+        div.scrollIntoView(true, {behavior: "smooth", inline: "nearest"});
         menuOpen = false;
     })
 }
