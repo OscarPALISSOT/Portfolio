@@ -9,6 +9,9 @@ a{
     width: 100vw;
     margin-bottom: 1em;
     position: sticky;
+    position: -moz-sticky;
+    position: -o-sticky;
+    position: -ms-sticky;
     position: -webkit-sticky;
     top: 0;
     background-color: #e8e8e8;
@@ -132,6 +135,9 @@ a{
         top: 0;
         position: -webkit-sticky;
         position: sticky;
+        position: -moz-sticky;
+        position: -o-sticky;
+        position: -ms-sticky;
         height: 100%;
         transform: translateX(0);
         display: flex;
