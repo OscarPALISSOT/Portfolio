@@ -28,8 +28,9 @@ services:
       - database-portfolio_data
     restart: unless-stopped
     environment:
-      KEY: ${DB_CLIENT}
-      SECRET: ${DB_CLIENT}
+      KEY: ${KEY}
+      SECRET: ${SECRET}
+      PUBLIC_URL: ${PUBLIC_URL}
 
       # DB CONFIGURATION
       DB_CLIENT: ${DB_CLIENT}
