@@ -31,6 +31,8 @@ services:
       KEY: ${KEY}
       SECRET: ${SECRET}
       PUBLIC_URL: ${PUBLIC_URL}
+      CORS_ENABLED: "true"
+      CORS_ORIGIN: "*"
 
       # DB CONFIGURATION
       DB_CLIENT: ${DB_CLIENT}
