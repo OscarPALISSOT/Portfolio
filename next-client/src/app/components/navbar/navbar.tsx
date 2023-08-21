@@ -13,8 +13,10 @@ export default function Navbar() {
     const [links, setLinks] = useState<string[]>([])
     const [homePageContent, setHomePageContent] = useState<HomepageContent>()
     const [logo, setLogo] = useState<string>('')
-    const [headerBorderClass, setHeaderBorderClass] = useState<string>('');
+    const [headerBorderClass, setHeaderBorderClass] = useState<string>(styles.header__border);
     const [hamburger__toggle__class, setHamburger__toggle__class] = useState<string>(styles.hamburger__toggle);
+    const [nav_menu__class, setNav_menu__class] = useState<string>(styles.nav_menu);
+    const [header__class, setHeader__class] = useState<string>(styles.header);
 
     useEffect(() => {
         client.request(
@@ -34,7 +36,7 @@ export default function Navbar() {
                     }]
                 }],
             })
-        ).then(data  => {
+        ).then(data => {
             setHomePageContent(data as unknown as HomepageContent)
         })
     }, [])
@@ -49,9 +51,11 @@ export default function Navbar() {
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 0) {
-                setHeaderBorderClass(styles.header__border__active);
+                setHeaderBorderClass(`${styles.header__border} ${styles.header__border__active}`);
+                setHeader__class(`${styles.header} ${styles.header__scroll}`)
             } else {
-                setHeaderBorderClass('');
+                setHeaderBorderClass(styles.header__border);
+                setHeader__class(styles.header)
             }
         };
 
@@ -63,28 +67,35 @@ export default function Navbar() {
 
     const toggleMenu = () => {
         setHamburger__toggle__class(hamburger__toggle__class === styles.hamburger__toggle ? `${styles.hamburger__toggle__expanded} ${styles.hamburger__toggle}` : styles.hamburger__toggle)
+        setNav_menu__class(nav_menu__class === styles.nav_menu ? `${styles.nav_menu__expanded} ${styles.nav_menu}` : styles.nav_menu)
+        document.body.classList.toggle(styles.noScroll);
     }
 
     return (
         <>
-            <nav className={styles.header}>
+            <nav className={header__class}>
 
                 <div className={styles.header__items}>
 
-                    <a href="/" >
-                        <img className={styles.header__logo} src={process.env.NEXT_PUBLIC_ASSETS_URL + logo + '?key=logo'} alt="logo"/>
-                    </a>
+                    <div className={styles.header__left}>
+                        <a href="/">
+                            <img className={styles.header__logo}
+                                 src={process.env.NEXT_PUBLIC_ASSETS_URL + logo + '?key=logo'} alt="logo"/>
+                        </a>
+                        <h1 className={styles.header__title}>Oscar PALISSOT</h1>
+                    </div>
 
                     <div className={hamburger__toggle__class} onClick={toggleMenu}>
                         <div className={styles.hamburger__btn}></div>
                     </div>
 
-                    <div className={styles.nav_menu}>
-                        <ul className="nav__list">
+
+                    <div className={nav_menu__class}>
+                        <ul className={styles.nav__list}>
                             {links.map((link, index) => {
                                 return (
-                                    <li key={index} className="nav__item">
-                                        <a href={link} className="nav__link">
+                                    <li key={index} className={styles.nav__item}>
+                                        <a href={link} className={styles.nav__link}>
                                             {link}
                                         </a>
                                     </li>
@@ -93,9 +104,9 @@ export default function Navbar() {
                         </ul>
                     </div>
 
-                    <div className={`${styles.header__border} ${headerBorderClass}`}></div>
                 </div>
 
+                <div className={headerBorderClass}></div>
 
             </nav>
         </>
