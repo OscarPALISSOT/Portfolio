@@ -1,0 +1,113 @@
+.header{
+    z-index: 1;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    margin: 0 -2rem 2rem -2rem;
+    padding: 0 2rem;
+    background: var(--light);
+}
+.header__items{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__border{
+    height: 2px;
+    background: var(--fontColor);
+    margin: 0 -2rem;
+    transform: scaleX(0);
+    transition: transform .5s ease-in;
+    transform-origin: right;
+}
+
+.header__border__active{
+    transform: scaleX(1);
+}
+
+.header .header__logo{
+    margin: 0.8rem 0 0.8rem 0;
+    height: 3rem;
+    width: auto;
+}
+
+.noScroll{
+    overflow: hidden;
+    height: 100vH;
+}
+
+/* menu items */
+
+.header .nav_menu{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+
+    margin: 0 -2rem 2rem 100%;
+    padding: 0 2rem;
+
+    font-size: 3rem;
+
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.4px);
+    -webkit-backdrop-filter: blur(10.4px);
+
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* hamburger menu btn */
+
+.hamburger__toggle{
+    cursor: pointer;
+    padding: 0.6rem 0;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.hamburger__btn{
+    height: 3px;
+    width: 2rem;
+    background: var(--fontColor);
+    transition: all 0.3s ease-out;
+}
+
+.hamburger__btn:after, .hamburger__btn:before{
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 2rem;
+    background: var(--fontColor);
+}
+
+.hamburger__btn::before{
+    transform: translateY(-0.6rem);
+    transition: all 0.3s ease-out;
+}
+.hamburger__btn::after{
+    transform: translateY(0.6rem);
+    transition: all 0.3s ease-out;
+}
+
+.hamburger__toggle__expanded .hamburger__btn{
+    transform: translateX(-2rem);
+    background: transparent;
+}
+
+.hamburger__toggle__expanded .hamburger__btn::before{
+    transform: translateY(0) translateX(2rem) rotate(45deg);
+}
+.hamburger__toggle__expanded .hamburger__btn::after{
+    transform: translateY(0) translateX(2rem) rotate(-45deg);
+}
