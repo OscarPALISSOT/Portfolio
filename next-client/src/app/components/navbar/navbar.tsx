@@ -1,9 +1,10 @@
 "use client";
 import {createDirectus, readItems} from '@directus/sdk';
 import {rest} from '@directus/sdk/rest';
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 
 import styles from './navbar.module.css'
+import {event} from "next/dist/build/output/log";
 
 const client = createDirectus(process.env.NEXT_PUBLIC_DIRECTUS_URL!).with(rest());
 
@@ -71,6 +72,20 @@ export default function Navbar() {
         document.body.classList.toggle(styles.noScroll);
     }
 
+    const scrollToSection = (e: React.MouseEvent<HTMLElement>, id: string) => {
+        e.preventDefault();
+        let url = new URL((e.target as HTMLAnchorElement).href);
+        console.log(document.URL);
+        const section = document.getElementById(id);
+        if (section) {
+            const yOffset = -96;
+            const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+
+
+    }
+
     return (
         <>
             <nav className={header__class}>
@@ -95,7 +110,7 @@ export default function Navbar() {
                             {links.map((link, index) => {
                                 return (
                                     <li key={index} className={styles.nav__item}>
-                                        <a href={link} className={styles.nav__link}>
+                                        <a href={'/' + '#' + link} className={styles.nav__link} onClick={(e) => scrollToSection(e, link)}>
                                             {link}
                                         </a>
                                     </li>
