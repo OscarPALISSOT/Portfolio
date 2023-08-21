@@ -5,6 +5,7 @@ import {useEffect, useState} from "react";
 import {createDirectus, readItems} from "@directus/sdk";
 import {rest} from '@directus/sdk/rest';
 import Section from "@/app/components/Section/section";
+import Footer from "@/app/components/footer/footer";
 
 const client = createDirectus(process.env.NEXT_PUBLIC_DIRECTUS_URL!).with(rest());
 export default function Home() {
@@ -46,6 +47,8 @@ export default function Home() {
                     </Section>
                 )
             })}
+
+            <Footer/>
 
         </>
     )
