@@ -3,8 +3,7 @@ import {createDirectus, readItems} from '@directus/sdk';
 import {rest} from '@directus/sdk/rest';
 import React, {useEffect, useState} from "react";
 
-import styles from './navbar.module.css'
-import {event} from "next/dist/build/output/log";
+import styles from './navbar.module.css';
 
 const client = createDirectus(process.env.NEXT_PUBLIC_DIRECTUS_URL!).with(rest());
 
