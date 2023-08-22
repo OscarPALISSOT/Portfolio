@@ -1,5 +1,5 @@
 .footer{
-    margin: 0 -6rem;
+    margin: 0 -2rem;
     height: 8rem;
     border-top: solid 3px var(--fontColor);
     display: flex;
@@ -38,5 +38,7 @@
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-
+    .footer{
+        margin: 0 -6rem;
+    }
 }
