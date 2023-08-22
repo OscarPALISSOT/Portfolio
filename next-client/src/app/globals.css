@@ -16,7 +16,7 @@ html, body{
 }
 
 body{
-  padding: 0 2rem 0 2rem;
+  padding: 0 6rem;
   background: var(--light);
   color: var(--fontColor);
 }
