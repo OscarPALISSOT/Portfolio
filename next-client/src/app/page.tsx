@@ -6,12 +6,13 @@ import {createDirectus, readItems} from "@directus/sdk";
 import {rest} from '@directus/sdk/rest';
 import Section from "@/app/components/Section/section";
 import Footer from "@/app/components/footer/footer";
+import HeroBlock from "@/app/components/Section/hero_block/hero_block";
 
 const client = createDirectus(process.env.NEXT_PUBLIC_DIRECTUS_URL!).with(rest());
 export default function Home() {
 
     const [homePageContent, setHomePageContent] = useState<HomepageContent>()
-    const [sections, setSections] = useState<Section[]>()
+    const [hero_block, setHero_block] = useState<HeroBlock>()
 
     useEffect(() => {
         client.request(
@@ -33,23 +34,28 @@ export default function Home() {
             })
         ).then(data => {
             setHomePageContent(data as unknown as HomepageContent)
-            setSections((data as unknown as HomepageContent).translations[0].Sections)
         })
     }, [])
+
+    useEffect(() => {
+        setHero_block(homePageContent?.translations[0].Sections[0].item as unknown as HeroBlock)
+    }, [homePageContent])
+
     return (
         <>
             <Navbar/>
 
-            {sections?.map(section => {
-                return (
-                    <Section key={section.id} id={section.item.Link}>
-                        <h1>{section.item.Headline}</h1>
-                    </Section>
-                )
-            })}
-
+            {hero_block &&
+                <Section id={hero_block.Link}>
+                    <HeroBlock
+                        Content={hero_block.Content}
+                        Headline={hero_block.Headline}
+                        Image={hero_block.Image}
+                        SubTitle={hero_block.SubTitle}
+                    />
+                </Section>
+            }
             <Footer/>
-
         </>
     )
 }
