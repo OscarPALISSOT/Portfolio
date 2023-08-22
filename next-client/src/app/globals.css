@@ -16,7 +16,7 @@ html, body{
 }
 
 body{
-  padding: 0 6rem;
+  padding: 0 2rem;
   background: var(--light);
   color: var(--fontColor);
 }
@@ -36,7 +36,9 @@ a{
 }
 
 @media (min-width: 768px) {
-
+  body{
+    padding: 0 6rem;
+  }
 }
 
 @media (min-width: 992px) {
