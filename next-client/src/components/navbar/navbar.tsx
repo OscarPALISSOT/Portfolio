@@ -1,52 +1,21 @@
 "use client";
-import {createDirectus, readItems} from '@directus/sdk';
-import {rest} from '@directus/sdk/rest';
+
 import React, {useEffect, useState} from "react";
 
 import styles from './navbar.module.css';
+import Image from "next/image";
 
-const client = createDirectus(process.env.NEXT_PUBLIC_DIRECTUS_URL!).with(rest());
+interface NavbarProps {
+    links: string[];
+    logo: string;
+}
 
+const Navbar = ({links, logo}: NavbarProps) => {
 
-export default function Navbar() {
-
-    const [links, setLinks] = useState<string[]>([])
-    const [homePageContent, setHomePageContent] = useState<HomepageContent>()
-    const [logo, setLogo] = useState<string>('')
     const [headerBorderClass, setHeaderBorderClass] = useState<string>(styles.header__border);
     const [hamburger__toggle__class, setHamburger__toggle__class] = useState<string>(styles.hamburger__toggle);
     const [nav_menu__class, setNav_menu__class] = useState<string>(styles.nav_menu);
     const [header__class, setHeader__class] = useState<string>(styles.header);
-
-    useEffect(() => {
-        client.request(
-            readItems('homepage_content', {
-                deep: {
-                    translations: {
-                        _filter: {
-                            languages_code: {_eq: 'fr-FR'},
-                        },
-                    },
-                },
-                fields: ['*', {
-                    translations: ['*', {
-                        Sections: ['*', {
-                            item: ['*']
-                        }]
-                    }]
-                }],
-            })
-        ).then(data => {
-            setHomePageContent(data as unknown as HomepageContent)
-        })
-    }, [])
-
-    useEffect(() => {
-        if (homePageContent) {
-            setLinks(homePageContent.translations[0].Sections.map(section => section.item.Link))
-            setLogo(homePageContent.translations[0].Logo)
-        }
-    }, [homePageContent])
 
     useEffect(() => {
         const handleScroll = () => {
@@ -93,8 +62,8 @@ export default function Navbar() {
 
                     <div className={styles.header__left}>
                         <a href="/">
-                            <img className={styles.header__logo}
-                                 src={process.env.NEXT_PUBLIC_ASSETS_URL + logo + '?key=logo'} alt="logo"/>
+                            <Image className={styles.header__logo}
+                                 src={process.env.NEXT_PUBLIC_ASSETS_URL + logo + '?key=logo'} alt="logo" width={48} height={48}/>
                         </a>
                         <h1 className={styles.header__title}>Oscar PALISSOT</h1>
                     </div>
@@ -126,3 +95,5 @@ export default function Navbar() {
         </>
     )
 }
+
+export default Navbar;
