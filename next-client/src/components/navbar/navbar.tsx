@@ -4,6 +4,7 @@ import React, {useEffect, useState} from "react";
 
 import styles from './navbar.module.css';
 import Image from "next/image";
+import useScroll from "@/hooks/useScrool";
 
 interface NavbarProps {
     links: string[];
@@ -17,20 +18,17 @@ const Navbar = ({links, logo}: NavbarProps) => {
     const [nav_menu__class, setNav_menu__class] = useState<string>(styles.nav_menu);
     const [header__class, setHeader__class] = useState<string>(styles.header);
 
+    const scrollY = useScroll();
+
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 0) {
+            if (scrollY > 0) {
                 setHeaderBorderClass(`${styles.header__border} ${styles.header__border__active}`);
                 setHeader__class(`${styles.header} ${styles.header__scroll}`)
             } else {
                 setHeaderBorderClass(styles.header__border);
                 setHeader__class(styles.header)
             }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
         };
     }, []);
 

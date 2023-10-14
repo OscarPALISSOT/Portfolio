@@ -31,9 +31,7 @@ export default function HeroBlock({heroBlock}: HeroBlockProps) {
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </>
     )
 }
