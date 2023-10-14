@@ -37,6 +37,7 @@ const Navbar = ({links, logo}: NavbarProps) => {
     const toggleMenu = () => {
         setHamburger__toggle__class(hamburger__toggle__class === styles.hamburger__toggle ? `${styles.hamburger__toggle__expanded} ${styles.hamburger__toggle}` : styles.hamburger__toggle)
         setNav_menu__class(nav_menu__class === styles.nav_menu ? `${styles.nav_menu__expanded} ${styles.nav_menu}` : styles.nav_menu)
+        setHeaderBorderClass(styles.header__border);
         document.body.classList.toggle(styles.noScroll);
     }
 

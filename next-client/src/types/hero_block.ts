@@ -4,6 +4,8 @@ interface HeroBlock {
     Image: string;
     Link: string;
     SubTitle: string;
+    Resume: string;
+    ResumeBtn: string;
     date_created: string;
     date_updated: string;
     id: number;

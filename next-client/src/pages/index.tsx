@@ -4,7 +4,6 @@ import {createDirectus, readItems} from "@directus/sdk";
 import {rest} from '@directus/sdk/rest';
 import Section from "@/components/Section/section";
 import HeroBlock from "@/components/Section/hero_block/hero_block";
-import Footer from "@/components/footer/footer";
 
 const client = createDirectus(process.env.NEXT_PUBLIC_DIRECTUS_URL!).with(rest());
 
@@ -20,12 +19,7 @@ const Home = ({heroBlock}: HomeProps) => {
         <>
             {heroBlock &&
                 <Section id={heroBlock.Link}>
-                    <HeroBlock
-                        Content={heroBlock.Content}
-                        Headline={heroBlock.Headline}
-                        Image={heroBlock.Image}
-                        SubTitle={heroBlock.SubTitle}
-                    />
+                    <HeroBlock heroBlock={heroBlock}/>
                 </Section>
             }
         </>

@@ -28,6 +28,35 @@
     font-size: 1.5em;
 }
 
+.resumeBtnContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.resumeBtn{
+    background-color: #5c88da;
+    border-radius: .5rem;
+    color: #fff;
+    display: inline-block;
+    font-size: 1.1em;
+    font-weight: 500;
+    margin: 2rem 0;
+    padding: 1rem;
+    text-justify: none;
+    transition: background-color .15s ease-out;
+    cursor: pointer;
+}
+
+
+.resumeBtn:hover{
+    background-color: #2d61c2;
+    box-shadow: inset 2px 4px 3px rgba(0,0,0,.1);
+    transition: background-color .15s ease-out;
+}
+
+
 @media (min-width: 576px) {
     .hero_block {
         align-items: flex-start;
@@ -37,6 +66,9 @@
         min-width: 40%;
         max-width: 300px;
         padding: 0 0 1rem 1rem;
+    }
+    .resumeBtnContainer{
+        justify-content: flex-start;
     }
 }
 
@@ -59,6 +91,7 @@
     }
     .image img{
         transition: transform 0.35s ease-in-out;
+        padding: 0;
     }
     .image img:hover{
         transform: scale(1.05);
