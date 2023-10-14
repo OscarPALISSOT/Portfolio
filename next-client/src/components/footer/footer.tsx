@@ -2,6 +2,7 @@
 
 import React from "react";
 import styles from './footer.module.css';
+import navTo from "@/modules/navTo";
 
 interface FooterProps {
     links: string[];
@@ -16,7 +17,12 @@ export default function Footer({links}: FooterProps) {
                     {links.map(link => {
                         return (
                             <li key={link} className={styles.sitemap__item}>
-                                <a>{link}</a>
+                                <a
+                                    href={'/' + '#' + link}
+                                    onClick={(e) => navTo(e, link)}
+                                >
+                                    {link}
+                                </a>
                             </li>
                         )
                     })}

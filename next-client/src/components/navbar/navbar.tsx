@@ -5,6 +5,7 @@ import React, {useEffect, useState} from "react";
 import styles from './navbar.module.css';
 import Image from "next/image";
 import useScroll from "@/hooks/useScrool";
+import navTo from "@/modules/navTo";
 
 interface NavbarProps {
     links: string[];
@@ -21,36 +22,20 @@ const Navbar = ({links, logo}: NavbarProps) => {
     const scrollY = useScroll();
 
     useEffect(() => {
-        const handleScroll = () => {
-            if (scrollY > 0) {
-                setHeaderBorderClass(`${styles.header__border} ${styles.header__border__active}`);
-                setHeader__class(`${styles.header} ${styles.header__scroll}`)
-            } else {
-                setHeaderBorderClass(styles.header__border);
-                setHeader__class(styles.header)
-            }
-        };
-    }, []);
+        if (scrollY > 0) {
+            setHeaderBorderClass(`${styles.header__border} ${styles.header__border__active}`);
+            setHeader__class(`${styles.header} ${styles.header__scroll}`)
+        } else {
+            setHeaderBorderClass(styles.header__border);
+            setHeader__class(styles.header)
+        }
+    }, [scrollY]);
 
     const toggleMenu = () => {
         setHamburger__toggle__class(hamburger__toggle__class === styles.hamburger__toggle ? `${styles.hamburger__toggle__expanded} ${styles.hamburger__toggle}` : styles.hamburger__toggle)
         setNav_menu__class(nav_menu__class === styles.nav_menu ? `${styles.nav_menu__expanded} ${styles.nav_menu}` : styles.nav_menu)
         setHeaderBorderClass(styles.header__border);
         document.body.classList.toggle(styles.noScroll);
-    }
-
-    const scrollToSection = (e: React.MouseEvent<HTMLElement>, id: string) => {
-        e.preventDefault();
-        let url = new URL((e.target as HTMLAnchorElement).href);
-        console.log(document.URL);
-        const section = document.getElementById(id);
-        if (section) {
-            const yOffset = -96;
-            const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
-            window.scrollTo({ top: y, behavior: 'smooth' });
-        }
-
-
     }
 
     return (
@@ -77,7 +62,7 @@ const Navbar = ({links, logo}: NavbarProps) => {
                             {links.map((link, index) => {
                                 return (
                                     <li key={index} className={styles.nav__item}>
-                                        <a href={'/' + '#' + link} className={styles.nav__link} onClick={(e) => scrollToSection(e, link)}>
+                                        <a href={'/' + '#' + link} className={styles.nav__link} onClick={(e) => navTo(e, link)}>
                                             {link}
                                         </a>
                                     </li>

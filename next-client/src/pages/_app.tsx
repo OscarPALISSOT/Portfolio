@@ -1,6 +1,6 @@
 import type {AppProps} from 'next/app'
-import '../Styles/globals.css'
-import '../Styles/variable.css'
+import '@/styles/globals.css'
+import '@/styles/variable.css'
 import Navbar from "@/components/navbar/navbar";
 import {createDirectus, readItems} from "@directus/sdk";
 import {rest} from "@directus/sdk/rest";
