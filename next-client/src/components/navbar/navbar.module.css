@@ -179,7 +179,7 @@
 }
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 993px) {
+@media (min-width: 1050px) {
     .hamburger__btn {
         display: none;
     }
@@ -229,7 +229,7 @@
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1300px) {
+@media (min-width: 1350px) {
 
     .header .nav_menu {
         font-size: 1.65rem;
@@ -249,7 +249,7 @@
     }
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1420px) {
 
     .header .nav_menu {
         font-size: 1.8rem;

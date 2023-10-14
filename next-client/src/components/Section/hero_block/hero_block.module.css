@@ -36,9 +36,7 @@
         float: right;
         min-width: 40%;
         max-width: 300px;
-    }
-    .image img{
-        margin: 1em;
+        padding: 0 0 1rem 1rem;
     }
 }
 
