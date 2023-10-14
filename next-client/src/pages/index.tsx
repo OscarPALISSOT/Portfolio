@@ -28,7 +28,6 @@ const Home = ({heroBlock}: HomeProps) => {
                     />
                 </Section>
             }
-            <Footer/>
         </>
     )
 }

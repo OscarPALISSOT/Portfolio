@@ -15,6 +15,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    padding: 0 2rem;
 }
 
 .sitemap__item{
@@ -26,19 +27,22 @@
     color: var(--darkHover);
 }
 
-
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-    .footer{
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-evenly;
-    }
+.copyright{
+    white-space: nowrap;
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     .footer{
         margin: 0 -6rem;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .footer{
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
     }
 }
