@@ -6,6 +6,8 @@ import styles from './navbar.module.css';
 import Image from "next/image";
 import useScroll from "@/hooks/useScrool";
 import navTo from "@/modules/navTo";
+import Link from "next/link";
+import useDeviceSize from "@/hooks/useDeviceSize";
 
 interface NavbarProps {
     links: string[];
@@ -20,6 +22,7 @@ const Navbar = ({links, logo}: NavbarProps) => {
     const [header__class, setHeader__class] = useState<string>(styles.header);
 
     const scrollY = useScroll();
+    const [width, height] = useDeviceSize();
 
     useEffect(() => {
         if (scrollY > 0) {
@@ -45,10 +48,11 @@ const Navbar = ({links, logo}: NavbarProps) => {
                 <div className={styles.header__items}>
 
                     <div className={styles.header__left}>
-                        <a href="/">
+                        <Link href="/">
                             <Image className={styles.header__logo}
-                                 src={process.env.NEXT_PUBLIC_ASSETS_URL + logo + '?key=logo'} alt="logo" width={48} height={48}/>
-                        </a>
+                                   src={process.env.NEXT_PUBLIC_ASSETS_URL + logo + '?key=logo'} alt="logo" width={48}
+                                   height={48}/>
+                        </Link>
                         <h1 className={styles.header__title}>Oscar PALISSOT</h1>
                     </div>
 
@@ -62,9 +66,16 @@ const Navbar = ({links, logo}: NavbarProps) => {
                             {links.map((link, index) => {
                                 return (
                                     <li key={index} className={styles.nav__item}>
-                                        <a href={'/' + '#' + link} className={styles.nav__link} onClick={(e) => navTo(e, link)}>
+                                        <Link
+                                            href={'/' + '#' + link}
+                                            className={styles.nav__link}
+                                            onClick={(e) => {
+                                                navTo(e, link)
+                                                width < 992 && toggleMenu()
+                                            }}
+                                        >
                                             {link}
-                                        </a>
+                                        </Link>
                                     </li>
                                 )
                             })}
