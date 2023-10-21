@@ -8,7 +8,6 @@ interface SkillBlockProps {
 
 const SkillBlock = ({skillsBlock}: SkillBlockProps) => {
 
-    console.log(skillsBlock)
     return (
         <>
             <h1 className={styles.title}>{skillsBlock.Headline}</h1>
