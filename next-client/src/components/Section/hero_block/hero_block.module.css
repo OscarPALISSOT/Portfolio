@@ -62,10 +62,14 @@
         align-items: flex-start;
     }
     .image {
-        float: right;
-        min-width: 40%;
-        max-width: 300px;
         padding: 0 0 1rem 1rem;
+        display: flex;
+        justify-content: end;
+    }
+
+    .image img{
+        min-width: 40%;
+        max-width: 650px;
     }
     .resumeBtnContainer{
         justify-content: flex-start;
