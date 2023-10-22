@@ -1,4 +1,4 @@
-interface HeroBlock {
+interface HeroBlockType {
     Content: string;
     Headline: string;
     Image: string;
@@ -14,3 +14,5 @@ interface HeroBlock {
     user_created: string;
     user_updated: string;
 }
+
+export default HeroBlockType;

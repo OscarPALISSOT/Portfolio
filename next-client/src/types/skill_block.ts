@@ -1,14 +1,11 @@
-interface Skill {
-    id: number;
-    Name: string;
-    Icon: string;
-    Description: string;
-}
+import Skills from "./skills";
 
 
-interface SkillBlock {
+interface SkillBlockType {
     id: number;
-    Skills: Skill[];
+    Skills: Skills[];
     Headline: string;
     Link: string;
 }
+
+export default SkillBlockType;

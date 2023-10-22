@@ -1,5 +1,6 @@
 import React from "react";
 import styles from './hero_block.module.css';
+import HeroBlock from "@/types/hero_block";
 
 
 interface HeroBlockProps {

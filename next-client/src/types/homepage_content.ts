@@ -1,3 +1,5 @@
+import Skills from "./skills";
+
 interface Item {
     id: number;
     status: string;
@@ -10,7 +12,7 @@ interface Item {
     Link: string;
     Content?: string;
     Image?: string;
-    Skills?: number[];
+    Skills?: Skills[];
     Experiences?: number[];
     contacts?: number[];
 }
@@ -22,14 +24,6 @@ interface Section {
     item: Item;
 }
 
-interface Translation {
-    id: number;
-    homepage_content_id: number;
-    languages_code: string;
-    Sections: Section[];
-    Logo: string;
-}
-
 interface HomepageContent {
     id: number;
     status: string;
@@ -37,5 +31,9 @@ interface HomepageContent {
     date_created: string;
     user_updated: string;
     date_updated: string;
-    translations: Translation[];
+    Sections: Section[];
+    Logo: string;
 }
+
+
+export default HomepageContent;

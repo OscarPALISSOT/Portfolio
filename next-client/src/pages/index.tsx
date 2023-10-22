@@ -4,19 +4,24 @@ import {createDirectus, readItems} from "@directus/sdk";
 import {rest} from '@directus/sdk/rest';
 import Section from "@/components/Section/section";
 import HeroBlock from "@/components/Section/hero_block/hero_block";
-import React from "react";
+import React, {useEffect} from "react";
 import SkillBlock from "@/components/Section/skill_block/skill_block";
+import HomepageContent from "@/types/homepage_content";
+import HeroBlockType from "@/types/hero_block";
+import SkillBlockType from "@/types/skill_block";
 
 const client = createDirectus(process.env.NEXT_PUBLIC_DIRECTUS_URL!).with(rest());
 
 interface HomeProps {
-    heroBlock: HeroBlock;
-    skillsBlock: SkillBlock;
+    heroBlock: HeroBlockType;
+    skillsBlock: SkillBlockType;
     links: string[];
     logo: string;
 }
 
 const Home = ({heroBlock, skillsBlock}: HomeProps) => {
+
+    console.log(skillsBlock)
 
     return (
         <>
@@ -38,29 +43,29 @@ export async function getServerSideProps() {
 
     const homePageContent = await client.request(
         readItems('homepage_content', {
-            deep: {
-                translations: {
-                    _filter: {
-                        languages_code: {_eq: 'fr-FR'},
-                    },
-                },
-            },
             fields: ['*', {
-                translations: ['*', {
-                    Sections: ['*', {
-                        item: ['*']
+                Sections: ['*', {
+                    item: ['*', {
+                        Skills: ['*', {
+                            skill_id: ['*',{
+                                translations: ['*']
+                            }]
+                        }]
                     }]
                 }]
             }],
         })
-    )
+    ) as unknown as HomepageContent;
+
+
+
 
     return {
         props: {
-            heroBlock: (homePageContent as unknown as HomepageContent).translations[0].Sections[0].item as unknown as HeroBlock,
-            skillsBlock: (homePageContent as unknown as HomepageContent).translations[0].Sections[1].item as unknown as SkillBlock,
-            links: (homePageContent as unknown as HomepageContent).translations[0].Sections.map(section => section.item.Link),
-            logo: (homePageContent as unknown as HomepageContent).translations[0].Logo
+            heroBlock: homePageContent.Sections[0].item as HeroBlockType,
+            skillsBlock: homePageContent.Sections[1].item as unknown as SkillBlockType,
+            links: homePageContent.Sections.map(section => section.item.Link),
+            logo: homePageContent.Logo,
         },
     };
 }
