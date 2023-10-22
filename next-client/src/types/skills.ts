@@ -9,13 +9,6 @@ interface Skill_id {
     status: string;
     user_created: string;
     date_created: string;
-    translations: Skill_id_Translation[];
-}
-
-interface Skill_id_Translation {
-    id: number;
-    skill_id: number;
-    languages_code: string;
     Name: string;
     Description: string;
     Icon: string;
