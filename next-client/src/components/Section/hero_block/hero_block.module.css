@@ -64,7 +64,7 @@
     .image {
         padding: 0 0 1rem 1rem;
         display: flex;
-        justify-content: end;
+        justify-content: center;
     }
 
     .image img{
@@ -92,6 +92,7 @@
     .image {
         width: 100%;
         text-align: center;
+        justify-content: flex-end;
     }
     .image img{
         transition: transform 0.35s ease-in-out;
