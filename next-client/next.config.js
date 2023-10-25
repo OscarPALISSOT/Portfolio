@@ -8,5 +8,6 @@ module.exports = {
         domains: [
             "directus.oscarpalissot.fr",
         ],
+        dangerouslyAllowSVG: true,
     },
 }

@@ -1,10 +1,6 @@
-interface Skills {
-    id: number;
-    skill_bloc_id: number;
-    skill_id: Skill_id[];
-}
 
-interface Skill_id {
+
+interface Skills {
     id: number;
     status: string;
     user_created: string;

@@ -4,7 +4,7 @@ import {createDirectus, readItems} from "@directus/sdk";
 import {rest} from '@directus/sdk/rest';
 import Section from "@/components/Section/section";
 import HeroBlock from "@/components/Section/hero_block/hero_block";
-import React, {useEffect} from "react";
+import React from "react";
 import SkillBlock from "@/components/Section/skill_block/skill_block";
 import HomepageContent from "@/types/homepage_content";
 import HeroBlockType from "@/types/hero_block";
@@ -20,8 +20,6 @@ interface HomeProps {
 }
 
 const Home = ({heroBlock, skillsBlock}: HomeProps) => {
-
-    console.log(skillsBlock)
 
     return (
         <>
@@ -47,9 +45,7 @@ export async function getServerSideProps() {
                 Sections: ['*', {
                     item: ['*', {
                         Skills: ['*', {
-                            skill_id: ['*',{
-                                translations: ['*']
-                            }]
+                            skill_id: ['*']
                         }]
                     }]
                 }]
