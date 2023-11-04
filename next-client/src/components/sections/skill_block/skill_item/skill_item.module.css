@@ -48,7 +48,15 @@
 .description {
     color: var(--secondaryHover);
     margin: 0.8rem 0;
+    text-align: start;
 }
+
+@media (min-width: 576px) {
+    .description{
+        text-align: justify;
+    }
+}
+
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
