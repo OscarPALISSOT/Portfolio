@@ -7,6 +7,7 @@ module.exports = {
     images: {
         domains: [
             "directus.oscarpalissot.fr",
+            "localhost",
         ],
         dangerouslyAllowSVG: true,
     },
