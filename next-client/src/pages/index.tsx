@@ -62,7 +62,7 @@ export async function getServerSideProps() {
             experienceBlock: experienceBlock,
             //skillsBlock: homePageContent.Sections[2].item as unknown as SkillBlockType,
             links: [heroBlock.link, experienceBlock.link],
-            //logo: homePageContent.Logo,
+            logo: heroBlock.logo,
         },
     };
 }

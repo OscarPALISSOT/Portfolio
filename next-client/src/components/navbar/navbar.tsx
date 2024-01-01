@@ -50,8 +50,8 @@ const Navbar = ({links, logo}: NavbarProps) => {
                     <div className={styles.header__left}>
                         <Link href="/">
                             <Image className={styles.header__logo}
-                                   src={process.env.NEXT_PUBLIC_ASSETS_URL + logo + '?key=logo'} alt="logo" width={48}
-                                   height={48}/>
+                                   src={process.env.NEXT_PUBLIC_ASSETS_URL + logo + '?key=logo'} alt="logo" width={128}
+                                   height={128}/>
                         </Link>
                         <h1 className={styles.header__title}>Oscar PALISSOT</h1>
                     </div>

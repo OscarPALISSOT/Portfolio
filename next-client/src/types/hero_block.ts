@@ -1,4 +1,5 @@
 interface HeroBlockType {
+    logo: string;
     description: string;
     headline: string;
     sub_headline: string;
