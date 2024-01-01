@@ -1,11 +1,11 @@
 interface HeroBlockType {
-    Content: string;
-    Headline: string;
-    Image: string;
-    Link: string;
-    SubTitle: string;
-    Resume: string;
-    ResumeBtn: string;
+    description: string;
+    headline: string;
+    sub_headline: string;
+    image: string;
+    link: string;
+    cv: string;
+    cv_button_label: string;
     date_created: string;
     date_updated: string;
     id: number;

@@ -7,8 +7,6 @@ import React from "react";
 import Head from "next/head";
 
 
-
-
 export default function App({Component, pageProps}: AppProps) {
     return (
         <>
@@ -20,6 +18,7 @@ export default function App({Component, pageProps}: AppProps) {
                 links={pageProps.links}
                 logo={pageProps.logo}
             />
+
             <Component {...pageProps} />
 
             <Footer links={pageProps.links}/>

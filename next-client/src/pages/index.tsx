@@ -22,12 +22,12 @@ interface HomeProps {
 
 const Home = ({heroBlock, skillsBlock, experienceBlock}: HomeProps) => {
 
-    console.log(experienceBlock)
+    console.log(heroBlock)
 
     return (
         <>
             {heroBlock &&
-                <Section id={heroBlock.Link}>
+                <Section id={heroBlock.link}>
                     <HeroBlock heroBlock={heroBlock}/>
                 </Section>
             }
@@ -47,30 +47,19 @@ const Home = ({heroBlock, skillsBlock, experienceBlock}: HomeProps) => {
 
 export async function getServerSideProps() {
 
-    const homePageContent = await client.request(
-        readItems('homepage_content', {
-            fields: ['*', {
-                Sections: ['*', {
-                    item: ['*', {
-                        Skills: ['*', {
-                            skill_id: ['*']
-                        }],
-                        Experiences: ['*', {
-                            experience_id: ['*']
-                        }]
-                    }]
-                }]
-            }],
+    const heroBlock = await client.request(
+        readItems('hero_block', {
+            fields: ['*', {}],
         })
-    ) as unknown as HomepageContent;
+    ) as unknown as HeroBlockType;
 
     return {
         props: {
-            heroBlock: homePageContent.Sections[0].item as HeroBlockType,
-            experienceBlock: homePageContent.Sections[1].item as unknown as ExperienceBlockType,
-            skillsBlock: homePageContent.Sections[2].item as unknown as SkillBlockType,
-            links: homePageContent.Sections.map(section => section.item.Link),
-            logo: homePageContent.Logo,
+            heroBlock: heroBlock,
+            //experienceBlock: homePageContent.Sections[1].item as unknown as ExperienceBlockType,
+            //skillsBlock: homePageContent.Sections[2].item as unknown as SkillBlockType,
+            links: [heroBlock.link],
+            //logo: homePageContent.Logo,
         },
     };
 }
