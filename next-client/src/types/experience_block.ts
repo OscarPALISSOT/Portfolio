@@ -2,8 +2,8 @@ import Experience from "@/types/experience";
 
 type ExperienceBlockType = {
     id: number;
-    Headline: string;
-    Link: string;
+    headline: string;
+    link: string;
     Experiences: Experience[];
 }
 

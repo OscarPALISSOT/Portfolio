@@ -4,7 +4,6 @@ import Section from "@/components/sections/section";
 import HeroBlock from "@/components/sections/hero_block/hero_block";
 import React from "react";
 import SkillBlock from "@/components/sections/skill_block/skill_block";
-import HomepageContent from "@/types/homepage_content";
 import HeroBlockType from "@/types/hero_block";
 import SkillBlockType from "@/types/skill_block";
 import ExperienceBlockType from "@/types/experience_block";
@@ -22,8 +21,6 @@ interface HomeProps {
 
 const Home = ({heroBlock, skillsBlock, experienceBlock}: HomeProps) => {
 
-    console.log(heroBlock)
-
     return (
         <>
             {heroBlock &&
@@ -32,7 +29,7 @@ const Home = ({heroBlock, skillsBlock, experienceBlock}: HomeProps) => {
                 </Section>
             }
             {experienceBlock &&
-                <Section id={experienceBlock.Link}>
+                <Section id={experienceBlock.link}>
                     <ExperienceBlock experienceBlock={experienceBlock}/>
                 </Section>
             }
@@ -53,12 +50,18 @@ export async function getServerSideProps() {
         })
     ) as unknown as HeroBlockType;
 
+    const experienceBlock = await client.request(
+        readItems('experience_block', {
+            fields: ['*', {}],
+        })
+    ) as unknown as ExperienceBlockType;
+
     return {
         props: {
             heroBlock: heroBlock,
-            //experienceBlock: homePageContent.Sections[1].item as unknown as ExperienceBlockType,
+            experienceBlock: experienceBlock,
             //skillsBlock: homePageContent.Sections[2].item as unknown as SkillBlockType,
-            links: [heroBlock.link],
+            links: [heroBlock.link, experienceBlock.link],
             //logo: homePageContent.Logo,
         },
     };
