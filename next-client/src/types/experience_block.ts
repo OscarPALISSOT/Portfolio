@@ -4,7 +4,7 @@ type ExperienceBlockType = {
     id: number;
     headline: string;
     link: string;
-    Experiences: Experience[];
+    experiences: Experience[];
 }
 
 export default ExperienceBlockType;

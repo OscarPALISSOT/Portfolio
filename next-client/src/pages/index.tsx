@@ -52,7 +52,9 @@ export async function getServerSideProps() {
 
     const experienceBlock = await client.request(
         readItems('experience_block', {
-            fields: ['*', {}],
+            fields: ['*', {
+                experiences: ['*', {}]
+            }],
         })
     ) as unknown as ExperienceBlockType;
 

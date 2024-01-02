@@ -9,7 +9,7 @@ const ExperienceBlock = ({experienceBlock}: ExperienceBlockProps) => {
     return (
         <>
             <h1 className={styles.title}>{experienceBlock.headline}</h1>
-            <Carousel />
+            <Carousel experience={experienceBlock.experiences} />
         </>
     )
 }

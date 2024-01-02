@@ -22,7 +22,7 @@ export default function HeroBlock({heroBlock}: HeroBlockProps) {
                         <p className={styles.text}>{heroBlock.description}</p>
                         <div className={styles.resumeBtnContainer}>
                             <a
-                                className={styles.resumeBtn}
+                                className={`shadow-md ${styles.resumeBtn}`}
                                 href={process.env.NEXT_PUBLIC_ASSETS_URL + heroBlock.cv}
                                 download
                                 target="_blank"

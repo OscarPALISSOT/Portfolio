@@ -29,7 +29,7 @@ export default function Footer({links}: FooterProps) {
                 </ul>
 
                 <div className={styles.copyright}>
-                    <p>Oscar PALISSOT © 2023</p>
+                    <p>Oscar PALISSOT © {new Date().getFullYear()}</p>
                 </div>
             </footer>
         </>

@@ -1,7 +1,21 @@
-const Carousel = () => {
+import Experience from "@/types/experience";
+import Card from "@/components/sections/experience_block/carousel/card/card";
+
+type CarouselProps = {
+    experience: Experience[];
+}
+
+const Carousel = ({experience}: CarouselProps) => {
     return (
         <>
-            <h1>carousel</h1>
+            <div>
+                {experience.map((experience) => (
+                        <div key={experience.id}>
+                            <Card experience={experience} />
+                        </div>
+                    )
+                )}
+            </div>
         </>
     )
 }
