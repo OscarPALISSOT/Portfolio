@@ -8,7 +8,9 @@ interface ExperienceBlockProps {
 const ExperienceBlock = ({experienceBlock}: ExperienceBlockProps) => {
     return (
         <>
-            <h1 className={styles.title}>{experienceBlock.headline}</h1>
+            <h1 className={`lg:pb-8 ${styles.title}`}>
+                {experienceBlock.headline}
+            </h1>
             <Carousel experience={experienceBlock.experiences} />
         </>
     )
