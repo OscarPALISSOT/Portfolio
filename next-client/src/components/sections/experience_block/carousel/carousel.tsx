@@ -1,7 +1,8 @@
 import Experience from "@/types/experience";
-import Card from "@/components/sections/experience_block/carousel/card/card";
+import Card from "@/components/sections/experience_block/carousel/card";
 import {useEffect, useState} from "react";
 import useDeviceSize from "@/hooks/useDeviceSize";
+import CarrouselBtn from "@/components/sections/experience_block/carousel/carrouselBtn";
 
 type CarouselProps = {
     experience: Experience[];
@@ -35,18 +36,19 @@ const Carousel = ({experience}: CarouselProps) => {
 
     return (
         <>
-            <div className={'w-full overflow-hidden py-6'}>
+            <div className={'w-full py-6 relative'}>
                 <div className={'flex flex-row items-center'} style={{width: (ratio * 100) + "%"}}>
                     {experience.map((experience) => (
-                            <div
-                                key={experience.id}
-                                className={'flex flex-row items-center justify-center'}
-                                style={{width: ((100 / slidesVisible) / ratio) + "%"}}>
-                                <Card experience={experience}/>
-                            </div>
-                        )
-                    )}
+                        <div
+                            key={experience.id}
+                            className={'flex flex-row items-center justify-center'}
+                            style={{width: ((100 / slidesVisible) / ratio) + "%"}}>
+                            <Card experience={experience}/>
+                        </div>
+                    ))}
                 </div>
+                <CarrouselBtn direction={"left"} onClick={() => {}}/>
+                <CarrouselBtn direction={"right"} onClick={() => {}}/>
             </div>
         </>
     )
