@@ -1,0 +1,11 @@
+database/aria_log.00000001
+database/aria_log_control
+database/ibdata1
+database/ib_logfile0
+database/mariadb_upgrade_info
+database/multi-master.info
+database/.my-healthcheck.cnf
+database/undo001
+database/undo002
+database/undo003
+database/ib_buffer_pool
