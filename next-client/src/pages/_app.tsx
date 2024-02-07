@@ -14,14 +14,9 @@ export default function App({Component, pageProps}: AppProps) {
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <title>Oscar PALISSOT | Portfolio</title>
             </Head>
-            <Navbar
-                links={pageProps.links}
-                logo={pageProps.logo}
-            />
 
             <Component {...pageProps} />
 
-            <Footer links={pageProps.links}/>
         </>
     )
 }

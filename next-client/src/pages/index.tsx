@@ -8,6 +8,8 @@ import HeroBlockType from "@/types/hero_block";
 import SkillBlockType from "@/types/skill_block";
 import ExperienceBlockType from "@/types/experience_block";
 import ExperienceBlock from "@/components/sections/experience_block/experience_block";
+import Navbar from "@/components/navbar/navbar";
+import Footer from "@/components/footer/footer";
 
 const client = createDirectus(process.env.NEXT_PUBLIC_DIRECTUS_URL!).with(rest());
 
@@ -19,10 +21,15 @@ interface HomeProps {
     logo: string;
 }
 
-const Home = ({heroBlock, skillsBlock, experienceBlock}: HomeProps) => {
+const Home = ({links, logo, heroBlock, skillsBlock, experienceBlock}: HomeProps) => {
 
     return (
         <>
+
+            <Navbar
+                links={links}
+                logo={logo}
+            />
             {heroBlock &&
                 <Section id={heroBlock.link}>
                     <HeroBlock heroBlock={heroBlock}/>
@@ -38,6 +45,8 @@ const Home = ({heroBlock, skillsBlock, experienceBlock}: HomeProps) => {
                     <SkillBlock skillsBlock={skillsBlock}/>
                 </Section>
             }
+
+            <Footer links={links}/>
         </>
     )
 }

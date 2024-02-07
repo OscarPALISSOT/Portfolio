@@ -9,3 +9,6 @@ database/undo001
 database/undo002
 database/undo003
 database/ib_buffer_pool
+database/tc.log
+database/ibtmp1
+database/ddl_recovery.log
