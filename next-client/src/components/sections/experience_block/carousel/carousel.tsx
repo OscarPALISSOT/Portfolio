@@ -18,8 +18,8 @@ const Carousel = ({experience}: CarouselProps) => {
     const goToItem = (index: number) => {
         if (index < 0) {
             currentItem == 0 ? setCurrentItem(experience.length - slidesVisible) : setCurrentItem(0);
-        } else if (index >= experience.length || (experience[currentItem + slidesVisible] === undefined && index > currentItem)) {
-            setCurrentItem(0);
+        } else if (index >= experience.length - 1 || (experience[currentItem + slidesVisible] === undefined && index > currentItem)) {
+            currentItem == experience.length - slidesVisible ? setCurrentItem(0) : setCurrentItem(experience.length - slidesVisible);
         } else {
             setCurrentItem(index)
         }
@@ -42,7 +42,6 @@ const Carousel = ({experience}: CarouselProps) => {
                 setSlidesVisible(3)
                 break
         }
-        console.log('slides', slidesVisible)
     }, [width]);
 
     useEffect(() => {
@@ -53,7 +52,7 @@ const Carousel = ({experience}: CarouselProps) => {
         <>
             <div className={'relative px-8'}>
                 <div className={'w-full py-6 overflow-hidden'}>
-                    <div id={'carrousel__container'} className={'flex flex-row items-center transition duration-300'}
+                    <div id={'carrousel__container'} className={'flex flex-row items-center transition duration-500'}
                          style={{width: (ratio * 100) + "%"}}>
                         {experience.map((experience) => (
                             <div
