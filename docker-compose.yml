@@ -65,6 +65,13 @@ services:
       STORAGE_LOCAL_DRIVER: "local"
       STORAGE_LOCAL_ROOT: "./back-end_Directus/uploads"
 
-networks:
-  default:
-    name: ${STACK_PRFX}
+  nextjs-front:
+    depends_on:
+      - directus-portfolio_data
+    build: next-client
+    ports:
+      - 3000:3000
+    environment:
+      NODE_ENV: production
+      NEXT_PUBLIC_DIRECTUS_URL: http://directus-portfolio_data:8055
+      NEXT_PUBLIC_ASSETS_URL: ${NEXT_PUBLIC_DIRECTUS_URL}/assets/

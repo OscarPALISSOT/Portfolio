@@ -1,4 +1,4 @@
-import styles from './Section.module.css';
+import styles from './section.module.css';
 import React from "react";
 
 interface SectionProps {
