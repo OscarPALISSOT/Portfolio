@@ -4,12 +4,15 @@ Ce repository Git contient mon site web portfolio personnel, conçu pour présen
 
 ### Accès au site web
 
-Vous pouvez accéder à mon site web portfolio en utilisant le lien suivant : [Mon Portfolio Web](https://www.monportfolioweb.com)
+Vous pouvez accéder à mon site web portfolio en utilisant le lien suivant : [Mon Portfolio](https://data.oscarpalissot.fr)
 
 ### Technologies utilisées
 
 J'ai réalisé ce projet en utilisant les technologies suivantes :
 
-- **Symfony** : pour la construction de l'infrastructure backend.
-- **Saas** : pour le style et l'amélioration des capacités CSS.
-- **JavaScript vanilla** : pour la gestion des éléments interactifs.
+- **Directus** : pour l'infrastructure backend.
+- **Docker** : pour la mise en production du site web.
+- **Nginx** : pour le reverse proxy.
+- **React** : pour l'infrastructure frontend.
+- **NextJS** : pour le rendu côté serveur.
+- **Css** : pour le style du site web.
