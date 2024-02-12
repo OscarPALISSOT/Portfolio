@@ -3,8 +3,6 @@ services:
   database-portfolio_data:
     container_name: database-portfolio_data
     image: mariadb:latest
-    env_file:
-      - .env
     ports:
       - 65050:3306
     volumes:
