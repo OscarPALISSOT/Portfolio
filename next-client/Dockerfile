@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . .
 
-ENV NEXT_PUBLIC_DIRECTUS_URL=http://test:8055
+ENV NEXT_PUBLIC_DIRECTUS_URL=https://portofolio-data-directus.oscarpalissot.fr
 ENV NEXT_PUBLIC_ASSETS_URL=${NEXT_PUBLIC_DIRECTUS_URL}/assets/
 
 RUN npm install

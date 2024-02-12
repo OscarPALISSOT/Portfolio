@@ -71,7 +71,3 @@ services:
     build: next-client
     ports:
       - 3000:3000
-    environment:
-      NODE_ENV: production
-      NEXT_PUBLIC_DIRECTUS_URL: http://directus-portfolio_data:8055
-      NEXT_PUBLIC_ASSETS_URL: ${NEXT_PUBLIC_DIRECTUS_URL}/assets/
