@@ -17,6 +17,32 @@ jobs:
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build and push Docker image
+        env:
+          STACK_PRFX: portfolio_data
+          KEY: ${{ secrets.DIRECTUS_KEY }}
+          SECRET: ${{ secrets.DIRECTUS_SECRET }}
+          PUBLIC_URL: https://portofolio-data-directus.oscarpalissot.fr
+
+          #MARIADB
+          MYSQL_ROOT_PASSWORD: ${{ secrets.MYSQL_ROOT_PASSWORD }}
+          MYSQL_DATABASE: directus
+          MYSQL_USER: directus
+          MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
+          MYSQL_AUTHENTICATION_PLUGIN: "mysql_native_password"
+
+          #DIRECTUS
+          DB_CLIENT: mysql
+          DB_PORT: 3306
+          ADMIN_EMAIL: ${{ secrets.ADMIN_EMAIL }}
+          ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+
+          # CACHE
+          CACHE_ENABLED: true
+          CACHE_STORE: redis
+          CACHE_REDIS: redis://portfolio_data-cache:6379
+          CACHE_AUTO_PURGE: true
+          CACHE_TTL: 1d
+
         run: |
           docker-compose build
           docker-compose push
