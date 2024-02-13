@@ -13,47 +13,24 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Login to Docker Hub
-        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-
-      - name: Build and push Docker image
-        env:
-          STACK_PRFX: portfolio_data
-          KEY: ${{ secrets.DIRECTUS_KEY }}
-          SECRET: ${{ secrets.DIRECTUS_SECRET }}
-          PUBLIC_URL: https://portofolio-data-directus.oscarpalissot.fr
-
-          #MARIADB
-          MYSQL_ROOT_PASSWORD: ${{ secrets.MYSQL_ROOT_PASSWORD }}
-          MYSQL_DATABASE: directus
-          MYSQL_USER: directus
-          MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
-          MYSQL_AUTHENTICATION_PLUGIN: "mysql_native_password"
-
-          #DIRECTUS
-          DB_CLIENT: mysql
-          DB_PORT: 3306
-          ADMIN_EMAIL: ${{ secrets.ADMIN_EMAIL }}
-          ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
-
-          # CACHE
-          CACHE_ENABLED: true
-          CACHE_STORE: redis
-          CACHE_REDIS: redis://portfolio_data-cache:6379
-          CACHE_AUTO_PURGE: true
-          CACHE_TTL: 1d
-
-        run: |
-          docker-compose build
-          docker-compose push
-
-      - name: SSH into your server and execute commands
+      - name: Pull git repository into server
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
-            cd /home/containers/portfolio_data
+            cd /home/containers/Portfolio_data
+            git checkout main
+            git pull
+
+      - name: Refresh docker containers
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script: |
+            cd /home/containers/Portfolio_data
             docker-compose down --rmi
             docker-compose up -d
