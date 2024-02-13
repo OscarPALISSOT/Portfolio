@@ -10,8 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
 
       - name: Pull git repository into server
         uses: appleboy/ssh-action@master
@@ -19,6 +17,7 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SERVER_SSH_KEY }}
+          passphrase: ${{ secrets.SERVER_PASSPHRASE }}
           script: |
             cd /home/containers/Portfolio_data
             git checkout main
@@ -30,6 +29,7 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SERVER_SSH_KEY }}
+          passphrase: ${{ secrets.SERVER_PASSPHRASE }}
           script: |
             cd /home/containers/Portfolio_data
             docker-compose down --rmi
