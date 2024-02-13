@@ -32,5 +32,5 @@ jobs:
           passphrase: ${{ secrets.SERVER_PASSPHRASE }}
           script: |
             cd /home/containers/Portfolio_data
-            docker-compose down --rmi
-            docker-compose up -d
+            docker compose down --rmi
+            docker compose up -d
