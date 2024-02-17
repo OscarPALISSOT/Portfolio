@@ -63,7 +63,7 @@ services:
       STORAGE_LOCAL_DRIVER: "local"
       STORAGE_LOCAL_ROOT: "./back-end_Directus/uploads"
 
-  nextjs-front:
+  nextjs-front-porfolio_data:
     depends_on:
       - directus-portfolio_data
     build: next-client
