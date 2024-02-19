@@ -23,7 +23,7 @@ services:
     ports:
       - 8055:8055
     volumes:
-      - ./back-end_Directus/directus/uploads:/directus/uploads
+      - ./back-end_Directus/directus/uploads:/directus/back-end_Directus/uploads
       - ./back-end_Directus/directus/database:/directus/database
       - ./back-end_Directus/directus/extensions:/directus/extensions
     depends_on:
