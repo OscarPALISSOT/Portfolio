@@ -15,4 +15,4 @@ J'ai réalisé ce projet en utilisant les technologies suivantes :
 - **Nginx** : pour le reverse proxy.
 - **React** : pour l'infrastructure frontend.
 - **NextJS** : pour le rendu côté serveur.
-- **Css** : pour le style du site web.
+- **Tailwind** : pour le style du site web.
