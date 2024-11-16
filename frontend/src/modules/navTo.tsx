@@ -12,7 +12,7 @@ const useNavTo = () => {
         const moveTo = (link: string) => {
             const section = document.getElementById(link);
             if (section) {
-                const yOffset = -82;
+                const yOffset = -96;
                 const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
                 window.scrollTo({ top: y, behavior: 'smooth' });
             }
