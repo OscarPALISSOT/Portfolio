@@ -1,4 +1,3 @@
-version: "3"
 services:
   database-portfolio_data:
     container_name: database-portfolio_data
@@ -6,7 +5,7 @@ services:
     ports:
       - 65050:3306
     volumes:
-      - ./back-end_Directus/database:/var/lib/mysql
+      - ./backend/database:/var/lib/mysql
     environment:
         MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
         MYSQL_DATABASE: ${MYSQL_DATABASE}
@@ -23,9 +22,9 @@ services:
     ports:
       - 8055:8055
     volumes:
-      - ./back-end_Directus/directus/uploads:/directus/back-end_Directus/uploads
-      - ./back-end_Directus/directus/database:/directus/database
-      - ./back-end_Directus/directus/extensions:/directus/extensions
+      - ./backend/directus/uploads:/directus/backend/uploads
+      - ./backend/directus/database:/directus/database
+      - ./backend/directus/extensions:/directus/extensions
     depends_on:
       - cache-portfolio_data
       - database-portfolio_data
@@ -66,11 +65,12 @@ services:
       #STORAGE
       STORAGE_LOCATIONS: "local"
       STORAGE_LOCAL_DRIVER: "local"
-      STORAGE_LOCAL_ROOT: "./back-end_Directus/uploads"
+      STORAGE_LOCAL_ROOT: "./backend/uploads"
 
-  nextjs-front-porfolio_data:
+  frontend-porfolio_data:
+    container_name: frontend-portfolio_data
     depends_on:
       - directus-portfolio_data
-    build: next-client
+    build: frontend
     ports:
       - 3000:3000
