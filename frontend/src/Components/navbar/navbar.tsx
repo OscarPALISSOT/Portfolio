@@ -31,7 +31,7 @@ const Navbar = ({links, logo}: NavbarProps) => {
                             height={128}/>
                     </Link>
                     <Link href="/">
-                        <h1 className={"text-3xl"}>Oscar PALISSOT</h1>
+                        <h1 className={"text-3xl cursor-pointer hover:scale-105 duration-300 ease-out transition-all"}>Oscar PALISSOT</h1>
                     </Link>
                     </span>
                     <div>
@@ -55,7 +55,7 @@ const Navbar = ({links, logo}: NavbarProps) => {
                     </div>
                 </div>
                 <div
-                    className={`h-[3px] -mx-8 md:-mx-24 2xl:-mx-64 bg-primary origin-right duration-500 scale-x-0 ease-in ${scrollY > 2 && 'scale-x-100'}`}/>
+                    className={`h-[3px] -mx-8 md:-mx-24 2xl:-mx-64 bg-black origin-right duration-500 scale-x-0 ease-in ${scrollY > 2 && 'scale-x-100'}`}/>
             </div>
         </>
     )
