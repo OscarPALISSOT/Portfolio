@@ -29,7 +29,7 @@ services:
       - cache-portfolio_data
       - database-portfolio_data
     healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost:8055" ]
+      test: wget --no-verbose --tries=1 --spider http://directus-portfolio_data:8055/server/health || exit 1
       interval: 10s
       timeout: 5s
       retries: 3
