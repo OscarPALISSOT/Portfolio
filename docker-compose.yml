@@ -30,8 +30,9 @@ services:
       - database-portfolio_data
     healthcheck:
       test: wget --no-verbose --tries=1 --spider http://directus-portfolio_data:8055/server/health || exit 1
-      interval: 10s
-      timeout: 5s
+      start_period: 30s
+      interval: 15s
+      timeout: 15s
       retries: 3
     environment:
       KEY: ${KEY}
