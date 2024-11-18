@@ -28,7 +28,11 @@ services:
     depends_on:
       - cache-portfolio_data
       - database-portfolio_data
-    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8055" ]
+      interval: 10s
+      timeout: 5s
+      retries: 3
     environment:
       KEY: ${KEY}
       SECRET: ${SECRET}
@@ -67,10 +71,11 @@ services:
       STORAGE_LOCAL_DRIVER: "local"
       STORAGE_LOCAL_ROOT: "./backend/uploads"
 
-#  frontend-porfolio_data:
-#    container_name: frontend-portfolio_data
-#    depends_on:
-#      - directus-portfolio_data
-#    build: frontend
-#    ports:
-#      - 3000:3000
+  frontend-porfolio_data:
+    container_name: frontend-portfolio_data
+    depends_on:
+      directus-portfolio_data:
+        condition: service_healthy
+    build: frontend
+    ports:
+      - 3000:3000
