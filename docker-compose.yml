@@ -28,12 +28,6 @@ services:
     depends_on:
       - cache-portfolio_data
       - database-portfolio_data
-    healthcheck:
-      test: wget --no-verbose --tries=1 --spider http://directus-portfolio_data:8055/server/health || exit 1
-      start_period: 30s
-      interval: 15s
-      timeout: 15s
-      retries: 3
     environment:
       KEY: ${KEY}
       SECRET: ${SECRET}
@@ -75,8 +69,7 @@ services:
   frontend-portfolio_data:
     container_name: frontend-portfolio_data
     depends_on:
-      directus-portfolio_data:
-        condition: service_healthy
+      - directus-portfolio_data
     build: frontend
     ports:
       - 3000:3000
