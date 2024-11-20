@@ -33,8 +33,8 @@ jobs:
           passphrase: ${{ secrets.SERVER_PASSPHRASE }}
           script: |
             cd /home/containers/Portfolio_data
+            docker compose --profile frontend down --rmi all
             docker compose down --rmi all
             docker compose up -d
-            docker compose --profile frontend down --rmi all
             docker compose --profile frontend up -d
             
