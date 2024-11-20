@@ -35,6 +35,6 @@ jobs:
             cd /home/containers/Portfolio_data
             docker compose down --rmi all
             docker compose up -d
-            docker compose down --profile frontend --rmi all
+            docker compose --profile frontend down --rmi all
             docker compose --profile frontend up -d
             
