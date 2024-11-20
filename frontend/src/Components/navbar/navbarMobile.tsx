@@ -46,7 +46,7 @@ const NavbarMobile = ({links, logo}: NavbarProps) => {
                     </div>
                 </div>
                 <div
-                    className={`h-0.5 -mx-8 md:-mx-24 bg-primary origin-right duration-500 scale-x-0 ease-in ${scrollY > 0 && 'scale-x-100'} ${isMenuOpen && 'hidden'}`}
+                    className={`h-[3px] -mx-8 md:-mx-24 bg-black origin-right duration-500 scale-x-0 ease-in ${scrollY > 0 && 'scale-x-100'} ${isMenuOpen && 'hidden'}`}
                 />
 
             </div>
