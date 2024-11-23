@@ -5,6 +5,7 @@ import NavbarMobile from "@/Components/navbar/navbarMobile";
 import Navbar from "@/Components/navbar/navbar";
 import Section from "@/Components/section";
 import HeroBlock from "@/Components/hero";
+import ExperienceBlock from "@/Components/ExperienceBlock/experience";
 
 const client = createDirectus(process.env.NEXT_PUBLIC_DIRECTUS_URL!).with(rest());
 
@@ -39,6 +40,9 @@ async function Home() {
                 />
                 <Section id={heroBlock.link}>
                     <HeroBlock heroBlock={heroBlock}/>
+                </Section>
+                <Section id={experienceBlock.link}>
+                    <ExperienceBlock experienceBlock={experienceBlock}/>
                 </Section>
             </div>
         </>

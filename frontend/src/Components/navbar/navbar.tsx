@@ -21,7 +21,7 @@ const Navbar = ({links, logo}: NavbarProps) => {
     return (
         <>
             <div
-                className={`hidden lg:flex text-2xl transition duration-300 font-medium bg-background font-poppins sticky top-0 2xl:px-64 2xl:-mx-64 -mx-24 px-24 flex-col justify-between z-50 ${scrollY > 2 && 'shadow-[0_6px_12px_0_rgba(0,0,0,0.12)] '}`}>
+                className={`hidden lg:flex text-2xl transition duration-300 font-medium bg-background font-poppins sticky top-0 2xl:px-64 2xl:-mx-64 -mx-24 px-24 flex-col justify-between z-50 ${scrollY > 3 && 'shadow-[0_6px_12px_0_rgba(0,0,0,0.12)] '}`}>
                 <div className={'flex flex-row justify-between items-center h-24'}>
                     <span className={"flex items-center gap-6"}>
                         <Link href="/">
@@ -54,8 +54,7 @@ const Navbar = ({links, logo}: NavbarProps) => {
                         </ul>
                     </div>
                 </div>
-                <div
-                    className={`h-[3px] -mx-8 md:-mx-24 2xl:-mx-64 bg-black origin-right duration-500 scale-x-0 ease-in ${scrollY > 2 && 'scale-x-100'}`}/>
+                <div className={`h-[3px] -mx-8 md:-mx-24 2xl:-mx-64 bg-black origin-right duration-500 scale-x-0 ease-in ${scrollY > 3 && 'scale-x-100'}`}/>
             </div>
         </>
     )
