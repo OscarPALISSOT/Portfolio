@@ -12,6 +12,7 @@ export default {
                 'primaryHover': 'var(--primaryHover)',
                 'secondaryHover': 'var(--secondaryHover)',
                 'background': 'var(--background)',
+                'light': 'var(--light)',
                 'fontColor': 'var(--fontColor)',
                 'fontSecondary': 'var(--fontSecondary)',
             },
