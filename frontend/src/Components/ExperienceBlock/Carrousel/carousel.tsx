@@ -1,7 +1,7 @@
 'use client';
 
 import Experience from "@/types/experience";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import CarrouselBtn from "@/Components/ExperienceBlock/Carrousel/carrouselBtn";
 import Card from "@/Components/ExperienceBlock/card";
 import useDeviceSize from "@/hooks/useDeviceSize";
@@ -17,6 +17,8 @@ const Carousel = ({experience}: CarouselProps) => {
     const [ratio, setRatio] = useState(experience.length / slidesVisible)
     const [currentItem, setCurrentItem] = useState(0)
     const [width] = useDeviceSize()
+    const [startTouchX, setStartTouchX] = useState(0);
+    const [isTouching, setIsTouching] = useState(false);
 
     const goToItem = (index: number) => {
         if (index < 0) {
@@ -29,8 +31,75 @@ const Carousel = ({experience}: CarouselProps) => {
     }
 
     useEffect(() => {
+        const interval = setInterval(() => {
+            !isTouching &&
+            goToItem(currentItem + 1);
+        }, 10000);
+
+        return () => clearInterval(interval);
+    }, [currentItem, isTouching, goToItem]);
+
+    useEffect(() => {
         document.getElementById('carrousel__container')!.style.transform = `translate3d(${currentItem * -100 / experience.length}%, 0, 0)`
     }, [currentItem]);
+
+    useEffect(() => {
+        if (isTouching) {
+            document.getElementById('carrousel__container')!.style.transition = 'none';
+        } else {
+            document.getElementById('carrousel__container')!.style.transition = 'transform 500ms ease-in-out';
+        }
+    }, [isTouching]);
+
+    const handleTouchStart = (e: React.TouchEvent) => {
+        setIsTouching(true);
+        setStartTouchX(e.touches[0].clientX);
+    }
+
+    const handleTouchMove = (e: React.TouchEvent) => {
+        const currentTouchX = e.touches[0].clientX;
+        const touchDifference = startTouchX - currentTouchX;
+        const swipeThreshold = document.body.clientWidth / 4;
+
+        if (touchDifference > swipeThreshold || touchDifference < -swipeThreshold) {
+            return;
+        }
+
+        if (currentItem === 0 && touchDifference < 0) {
+            return;
+        } else if (currentItem === experience.length - 1 && touchDifference > 0) {
+            return;
+        }
+
+        const currentTranslateX = -currentItem * document.getElementById('carrousel__container')!.clientWidth / experience.length;
+
+        document.getElementById('carrousel__container')!.style.transform = `translateX(${currentTranslateX - touchDifference}px)`;
+    }
+
+    const handleTouchEnd = (e: React.TouchEvent) => {
+        const endTouchX = e.changedTouches[0].clientX;
+        const touchDifference = startTouchX - endTouchX;
+        const swipeThreshold = document.body.clientWidth / 4;
+
+        if (currentItem === 0 && touchDifference < 0) {
+            return;
+        } else if (currentItem === experience.length - 1 && touchDifference > 0) {
+            return;
+        }
+
+        if (touchDifference > swipeThreshold) {
+            setIsTouching(false);
+            goToItem(currentItem + slidesVisible);
+        } else if (touchDifference < -swipeThreshold) {
+            setIsTouching(false);
+            goToItem(currentItem - slidesVisible);
+        } else {
+            setIsTouching(false);
+            document.getElementById('carrousel__container')!.style.transition = 'transform 500ms ease-in-out';
+            document.getElementById('carrousel__container')!.style.transform = `translate3d(${currentItem * -100 / experience.length}%, 0, 0)`
+        }
+
+    }
 
 
     useEffect(() => {
@@ -53,7 +122,12 @@ const Carousel = ({experience}: CarouselProps) => {
 
     return (
         <>
-            <div className={'relative px-8'}>
+            <div
+                className={'relative px-8'}
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+            >
                 <div className={'w-full py-6 overflow-hidden'}>
                     <div id={'carrousel__container'} className={'flex flex-row items-center transition duration-500'}
                          style={{width: (ratio * 100) + "%"}}>

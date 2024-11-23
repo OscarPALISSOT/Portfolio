@@ -7,7 +7,7 @@ type CardProps = {
 
 const Card = ({experience}: CardProps) => {
     return (
-        <div className={'md:mx-3 w-[300px] lg:w-[400px] border border-border rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden cursor-pointer hover:scale-[102%]'}>
+        <div className={'mx-3 w-[300px] lg:w-[400px] border border-border rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden cursor-pointer hover:scale-[102%]'}>
             <div className={'h-[168px] lg:h-[224px] w-full'}>
                 <Image
                     className={'h-full w-full object-cover'}
