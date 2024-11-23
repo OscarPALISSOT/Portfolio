@@ -1,5 +1,5 @@
 import HeroBlockType from "@/types/hero_block";
-import Button from "@/Components/button";
+import Button from "@/components/button";
 import Image from "next/image";
 
 interface HeroBlockProps {

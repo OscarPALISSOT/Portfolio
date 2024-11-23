@@ -2,10 +2,10 @@
 
 import Experience from "@/types/experience";
 import React, {useCallback, useEffect, useState} from "react";
-import CarrouselBtn from "@/Components/ExperienceBlock/Carrousel/carrouselBtn";
-import Card from "@/Components/ExperienceBlock/card";
+import CarrouselBtn from "@/components/experienceBlock/Carrousel/carrouselBtn";
+import Card from "@/components/experienceBlock/card";
 import useDeviceSize from "@/hooks/useDeviceSize";
-import CarrouselPagination from "@/Components/ExperienceBlock/Carrousel/carrouselPagination";
+import CarrouselPagination from "@/components/experienceBlock/Carrousel/carrouselPagination";
 
 type CarouselProps = {
     experience: Experience[];

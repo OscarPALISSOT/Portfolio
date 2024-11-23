@@ -1,5 +1,5 @@
 import ExperienceBlockType from "@/types/experience_block";
-import Carousel from "@/Components/ExperienceBlock/Carrousel/carousel";
+import Carousel from "@/components/experienceBlock/Carrousel/carousel";
 
 interface ExperienceBlockProps {
     experienceBlock: ExperienceBlockType;

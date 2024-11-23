@@ -4,8 +4,8 @@ import Skills from "./skills";
 interface SkillBlockType {
     id: number;
     Skills: SkillsId[];
-    Headline: string;
-    Link: string;
+    headline: string;
+    link: string;
 }
 
 interface SkillsId {
