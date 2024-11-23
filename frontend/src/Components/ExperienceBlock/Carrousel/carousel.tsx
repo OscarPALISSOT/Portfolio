@@ -1,7 +1,7 @@
 'use client';
 
 import Experience from "@/types/experience";
-import React, {useEffect, useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import CarrouselBtn from "@/Components/ExperienceBlock/Carrousel/carrouselBtn";
 import Card from "@/Components/ExperienceBlock/card";
 import useDeviceSize from "@/hooks/useDeviceSize";
@@ -20,20 +20,29 @@ const Carousel = ({experience}: CarouselProps) => {
     const [startTouchX, setStartTouchX] = useState(0);
     const [isTouching, setIsTouching] = useState(false);
 
-    const goToItem = (index: number) => {
+    const goToItem = useCallback((index: number) => {
         if (index < 0) {
-            currentItem == 0 ? setCurrentItem(experience.length - slidesVisible) : setCurrentItem(0);
+            if (currentItem === 0) {
+                setCurrentItem(experience.length - slidesVisible)
+            } else {
+                setCurrentItem(0)
+            }
         } else if (index >= experience.length - 1 || (experience[currentItem + slidesVisible] === undefined && index > currentItem)) {
-            currentItem == experience.length - slidesVisible ? setCurrentItem(0) : setCurrentItem(experience.length - slidesVisible);
+            if (currentItem === (experience.length - slidesVisible)) {
+                setCurrentItem(0)
+            } else {
+                setCurrentItem(experience.length - slidesVisible)
+            }
         } else {
             setCurrentItem(index)
         }
-    }
+    }, [currentItem, experience, slidesVisible]);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            !isTouching &&
-            goToItem(currentItem + 1);
+            if(!isTouching) {
+                goToItem(currentItem + 1);
+            }
         }, 10000);
 
         return () => clearInterval(interval);
@@ -41,7 +50,7 @@ const Carousel = ({experience}: CarouselProps) => {
 
     useEffect(() => {
         document.getElementById('carrousel__container')!.style.transform = `translate3d(${currentItem * -100 / experience.length}%, 0, 0)`
-    }, [currentItem]);
+    }, [currentItem, experience.length]);
 
     useEffect(() => {
         if (isTouching) {
@@ -118,7 +127,7 @@ const Carousel = ({experience}: CarouselProps) => {
 
     useEffect(() => {
         setRatio(experience.length / slidesVisible)
-    }, [slidesVisible]);
+    }, [slidesVisible, experience.length]);
 
     return (
         <>
