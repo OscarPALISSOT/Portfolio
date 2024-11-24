@@ -19,6 +19,20 @@ export default {
             fontFamily: {
                 poppins: ['var(--poppins)', 'sans-serif'],
             },
+            keyframes: {
+                slide: {
+                    '0%': {
+                        transform: 'translateX(0)',
+                    },
+                    '100%': {
+                        transform: 'translateX(-100%)',
+                    },
+                },
+            },
+            animation: {
+                slideLeft: 'slide 25s infinite linear',
+                slideRight: 'slide 25s infinite linear reverse',
+            },
         },
     },
     plugins: [],

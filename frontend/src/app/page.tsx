@@ -5,8 +5,9 @@ import NavbarMobile from "@/components/navbar/navbarMobile";
 import Navbar from "@/components/navbar/navbar";
 import Section from "@/components/section";
 import HeroBlock from "@/components/hero";
-import ExperienceBlock from "@/components/experienceBlock/experience";
+import ExperienceBlock from "@/components/experienceBlock/experienceBlock";
 import SkillBlockType from "@/types/skill_block";
+import SkillBlock from "@/components/skillBlock/skillBlock";
 
 const client = createDirectus(process.env.NEXT_PUBLIC_DIRECTUS_URL!).with(rest());
 
@@ -28,7 +29,7 @@ async function Home() {
     const skillBlock = await client.request(
         readItems('skill_block', {
             fields: ['*', {
-                experiences: ['*', {}]
+                skills: ['*', {}]
             }],
         })
     ) as unknown as SkillBlockType;
@@ -52,6 +53,9 @@ async function Home() {
                 </Section>
                 <Section id={experienceBlock.link}>
                     <ExperienceBlock experienceBlock={experienceBlock}/>
+                </Section>
+                <Section id={skillBlock.link}>
+                    <SkillBlock skillBlock={skillBlock}/>
                 </Section>
             </div>
         </>
