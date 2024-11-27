@@ -33,7 +33,7 @@ const Footer = ({links}: FooterProps) => {
                 })}
             </li>
             <div className={'flex flex-col xl:flex-row gap-3 xl:gap-6 w-1/2 xl:justify-end'}>
-                <FooterLink link={'Mentions légales'} href={'/mentions-legales'}/>
+                <FooterLink link={'Mentions légales'} href={"/mentions-legales"}/>
                 <p className={'text-md lg:text-lg text-fontColor'}>{`© ${currentYear} Oscar PALISSOT. Tous droits réservés.`}</p>
             </div>
         </footer>
@@ -55,7 +55,7 @@ const FooterLink = ({link, href}: FooterLinkProps) => {
             className={'cursor-pointer text-md lg:text-lg text-fontColor hover:text-primary transition-all hover:decoration-0 duration-150 ease-in-out underline decoration-2 decoration-primary'}
             href={href ? href :`/#${link}`}
             onClick={(e) => {
-                if(href) {
+                if(!href) {
                     navTo(e, link)
                 }
             }}
