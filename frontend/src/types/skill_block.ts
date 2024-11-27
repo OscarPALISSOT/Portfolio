@@ -1,7 +1,6 @@
 import SkillType from "./skill";
 
-
-interface SkillBlockType {
+type SkillBlockType = {
     id: number;
     skills: SkillType[];
     headline: string;

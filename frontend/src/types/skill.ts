@@ -1,6 +1,4 @@
-
-
-interface SkillType {
+type SkillType = {
     id: number;
     status: string;
     user_created: string;

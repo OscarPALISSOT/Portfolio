@@ -1,4 +1,4 @@
-interface HeroBlockType {
+type HeroBlockType = {
     logo: string;
     description: string;
     headline: string;
