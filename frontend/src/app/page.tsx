@@ -10,6 +10,7 @@ import SkillBlockType from "@/types/skill_block";
 import SkillBlock from "@/components/skillBlock/skillBlock";
 import ContactBlockType from "@/types/contact_block";
 import ContactBlock from "@/components/contact";
+import Footer from "@/components/footer";
 
 const client = createDirectus(process.env.NEXT_PUBLIC_DIRECTUS_URL!).with(rest());
 
@@ -68,6 +69,7 @@ async function Home() {
                 <Section id={contactBlock.link}>
                     <ContactBlock contactBlock={contactBlock}/>
                 </Section>
+                <Footer links={links}/>
             </div>
         </>
     );
