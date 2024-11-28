@@ -113,7 +113,7 @@ const Carousel = ({experience}: CarouselProps) => {
 
     useEffect(() => {
         switch (true) {
-            case width < 640:
+            case width < 768:
                 setSlidesVisible(1)
                 break
             case width < 1440:

@@ -40,8 +40,6 @@ async function Home() {
         })
     ) as unknown as ContactBlockType;
 
-    const links = [heroBlock.link, experienceBlock.link, skillBlock.link, contactBlock.link];
-
     return (
         <>
             <Section id={heroBlock.link}>

@@ -1,10 +1,10 @@
-import Experience from "@/types/experience";
+import ExperienceType from "@/types/experience";
 
 type ExperienceBlockType = {
     id: number;
     headline: string;
     link: string;
-    experiences: Experience[];
+    experiences: ExperienceType[];
 }
 
 export default ExperienceBlockType;
