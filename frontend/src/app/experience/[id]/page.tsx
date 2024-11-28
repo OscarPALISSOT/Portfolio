@@ -18,7 +18,7 @@ async function Experience({params}: ExperienceProps) {
         <div className={"mt-4"}>
             <h1 className={"text-4xl lg:text-5xl font-semibold mb-8"}>{experience.title}</h1>
             <Image
-                className={'h-[168px] lg:h-[224px] 2xl:h-[281px] w-[300px] lg:w-[400px] 2xl:w-[500px] mb-6 object-cover rounded-xl shadow-md'}
+                className={'h-[168px] lg:h-[224px] 2xl:h-[281px] w-auto mb-6 object-cover rounded-xl shadow-md'}
                 src={process.env.NEXT_PUBLIC_ASSETS_URL + experience.thumbnail}
                 width={888}
                 height={500}
