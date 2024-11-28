@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import "@/styles/variable.css";
 import {Poppins} from 'next/font/google';
 import {Metadata} from "next";
+import {ReactNode} from "react";
 
 const poppins = Poppins({
     weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
                                        children,
                                    }: Readonly<{
-    children: React.ReactNode;
+    children: ReactNode;
 }>) {
     return (
         <html lang="en" className={`${poppins.variable}`}>

@@ -47,7 +47,7 @@ async function MentionsLegales ()  {
 
     return (
         <>
-            <div className={'bg-background px-8 md:px-24 2xl:px-64 h-fit snap-start'}>
+            <div className={'bg-background px-8 md:px-24 2xl:px-64 h-fit'}>
                 <NavbarMobile
                     links={links}
                     logo={logo}

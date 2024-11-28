@@ -1,11 +1,12 @@
 "use client";
 
-import React from "react";
+import React, {useEffect} from "react";
 import useScroll from "@/hooks/useScrool";
 import Link from "next/link";
 import Image from "next/image";
 import useCurrentSection from "@/hooks/useCurrentSection";
 import useNavTo from "@/modules/navTo";
+import {usePathname} from "next/navigation";
 
 interface NavbarProps {
     links: string[];
@@ -17,6 +18,19 @@ const Navbar = ({links, logo}: NavbarProps) => {
     const scrollY = useScroll();
     const currentSection = useCurrentSection(links);
     const navTo = useNavTo();
+    const pathname = usePathname();
+
+    useEffect(() => {
+        const htmlElement = document.documentElement;
+        if (pathname === "/"){
+            htmlElement.classList.add("lg:snap-y", "lg:snap-mandatory");
+        } else {
+            htmlElement.classList.remove("lg:snap-y", "lg:snap-mandatory");
+        }
+        return () => {
+            htmlElement.classList.remove("lg:snap-y", "lg:snap-mandatory");
+        };
+    }, [pathname]);
 
     return (
         <>
