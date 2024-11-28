@@ -39,19 +39,19 @@ export default async function RootLayout({
 
     const experienceBlock = await client.request(
         readItems('experience_block', {
-            fields: ['link', {}],
+            fields: ['link'],
         })
     ) as unknown as ExperienceBlockType;
 
     const skillBlock = await client.request(
         readItems('skill_block', {
-            fields: ['link', {}],
+            fields: ['link'],
         })
     ) as unknown as SkillBlockType;
 
     const contactBlock = await client.request(
         readItems('contact_block', {
-            fields: ['link', {}],
+            fields: ['link'],
         })
     ) as unknown as ContactBlockType;
 
