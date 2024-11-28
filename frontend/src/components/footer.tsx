@@ -1,9 +1,9 @@
 'use client';
 
-import Link from "next/link";
 import useScroll from "@/hooks/useScrool";
 import {useEffect, useState} from "react";
 import useNavTo from "@/modules/navTo";
+import {useRouter} from "next/navigation";
 
 interface FooterProps {
     links: string[];
@@ -49,19 +49,20 @@ interface FooterLinkProps {
 const FooterLink = ({link, href}: FooterLinkProps) => {
 
     const navTo = useNavTo();
-
+    const router = useRouter();
     return (
-        <Link
+        <p
             className={'cursor-pointer text-md lg:text-lg text-fontColor hover:text-primary transition-all hover:decoration-0 duration-150 ease-in-out underline decoration-2 decoration-primary'}
-            href={href ? href :`/#${link}`}
             onClick={(e) => {
                 if(!href) {
                     navTo(e, link)
+                } else {
+                    router.push(href);
                 }
             }}
         >
             {link}
-        </Link>
+        </p>
     );
 }
 

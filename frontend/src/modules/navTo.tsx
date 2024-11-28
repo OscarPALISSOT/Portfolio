@@ -1,11 +1,12 @@
 "use client";
 
 import React from "react";
-import {useRouter} from "next/navigation";
+import {usePathname, useRouter} from "next/navigation";
 
 const useNavTo = () => {
 
     const router = useRouter();
+    const pathname = usePathname();
 
     return (e: React.MouseEvent<HTMLElement>, link: string) => {
         e.preventDefault();
@@ -17,14 +18,10 @@ const useNavTo = () => {
                 window.scrollTo({ top: y, behavior: 'smooth' });
             }
         }
-
-        if (window.location.pathname !== '/') {
+        if (pathname !== '/') {
             router.push('/');
-            moveTo(link);
-        } else {
-            moveTo(link);
         }
-
+        moveTo(link);
     }
 }
 
