@@ -8,7 +8,6 @@ import HeroBlockType from "@/types/hero_block";
 import ExperienceBlockType from "@/types/experience_block";
 import SkillBlockType from "@/types/skill_block";
 import ContactBlockType from "@/types/contact_block";
-import Mentions from "@/types/mentions";
 import NavbarMobile from "@/components/navbar/navbarMobile";
 import Navbar from "@/components/navbar/navbar";
 import Footer from "@/components/footer";
