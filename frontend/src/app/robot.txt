@@ -1,5 +1,6 @@
 User-Agent: *
 Allow: /
 Disallow: /mentions-legales
+Disallow: /_next
 
 Sitemap: https://data.oscarpalissot/sitemap.xml
