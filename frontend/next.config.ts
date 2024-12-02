@@ -6,10 +6,6 @@ const nextConfig: NextConfig = {
             {
                 protocol: 'https',
                 hostname: 'backend.data.oscarpalissot.fr',
-            },
-            {
-                protocol: 'http',
-                hostname: 'localhost',
             }
         ],
         dangerouslyAllowSVG: true,
